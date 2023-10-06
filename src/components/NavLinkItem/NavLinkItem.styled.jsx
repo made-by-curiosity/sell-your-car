@@ -15,13 +15,13 @@ export const StyledNavLink = styled(NavLink)`
   transition: background-color 200ms ease-out;
 
   &.active {
-    background-color: #0b44cd;
+    background-color: #3470ff;
     color: #ffffff;
   }
 
   &:hover,
   &:focus {
-    background-color: #3470ff;
+    background-color: #0b44cd;
     color: #ffffff;
   }
 `;

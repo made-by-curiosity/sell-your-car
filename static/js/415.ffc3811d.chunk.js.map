@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/415.ffc3811d.chunk.js","mappings":"+IAMA,UAJa,WACX,OAAO,SAAC,IAAD,kBACR,C","sources":["pages/Home.jsx"],"sourcesContent":["import { Container } from 'components/Container/Container';\n\nconst Home = () => {\n  return <Container>Home</Container>;\n};\n\nexport default Home;\n"],"names":[],"sourceRoot":""}

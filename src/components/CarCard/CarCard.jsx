@@ -48,10 +48,15 @@ export const CarCard = ({ carInfo }) => {
     console.log('added to favorite');
   };
 
+  const handlePhotoLoadError = e => {
+    e.currentTarget.onerror = null;
+    e.currentTarget.src = car;
+  };
+
   return (
     <CardContainer>
       <PhotoWrapper>
-        <Photo src={img} alt={description} />
+        <Photo src={img} alt={description} onError={handlePhotoLoadError} />
       </PhotoWrapper>
 
       <IconBtn icon={`${icon}#heart`} onClick={handleClick} />

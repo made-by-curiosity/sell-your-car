@@ -22,7 +22,11 @@ export const PhotoWrapper = styled.div`
     #f3f3f2;
 `;
 
-export const Photo = styled.img``;
+export const Photo = styled.img`
+  height: 100%;
+
+  object-fit: cover;
+`;
 
 export const MainInfoContainer = styled.div`
   margin-bottom: 8px;
@@ -55,8 +59,18 @@ export const AdditionalInfoContainer = styled.div`
 `;
 
 export const AdditionalInfoWrapper = styled.p`
+  width: 100%;
   display: flex;
   gap: 6px;
+
+  & > span {
+    white-space: nowrap;
+  }
+
+  & > span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   & > span:not(:last-child):after {
     content: '|';

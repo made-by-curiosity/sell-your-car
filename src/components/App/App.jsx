@@ -1,3 +1,4 @@
+import { Layout } from 'components/Layout/Layout.jsx';
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
@@ -8,10 +9,12 @@ const Favorites = lazy(() => import('../../pages/Favorites.jsx'));
 export const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/catalog" element={<Catalog />} />
-      <Route path="/favorites" element={<Favorites />} />
-      <Route path="*" element={<Navigate to="/" />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Route>
     </Routes>
   );
 };

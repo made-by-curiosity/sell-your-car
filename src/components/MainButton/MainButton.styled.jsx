@@ -6,6 +6,7 @@ export const Button = styled.button`
   padding: 12px 50px;
 
   color: #fff;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.43;
 

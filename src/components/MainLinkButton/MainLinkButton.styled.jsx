@@ -10,6 +10,7 @@ export const ButtonLink = styled.a`
   align-items: center;
 
   color: #fff;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.43;
 

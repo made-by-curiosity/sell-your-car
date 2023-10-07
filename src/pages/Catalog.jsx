@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { LoadMoreBtn } from 'components/LoadMoreBtn/LoadMoreBtn';
 import { CarCard } from 'components/CarCard/CarCard';
 import { CardsGrid } from 'components/CardsGrid/CardsGrid';
@@ -5,7 +6,7 @@ import { Container } from 'components/Container/Container';
 import { MainButton } from 'components/MainButton/MainButton';
 import { MainLinkButton } from 'components/MainLinkButton/MainLinkButton';
 import { Section } from 'components/Section/Section';
-import { useEffect, useState } from 'react';
+import { CarInfoModal } from 'components/CarInfoModal/CarInfoModal';
 import { getAllCars } from 'services/sellCarsApi';
 import { PAGE, PER_PAGE } from 'utils/constants';
 
@@ -13,6 +14,8 @@ const Catalog = () => {
   const [allCars, setAllCars] = useState([]);
   const [page, setPage] = useState(PAGE);
   const [isLoadMoreShown, setIsLoadMoreShown] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentCar, setCurrentCar] = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -44,33 +47,46 @@ const Catalog = () => {
     setPage(page => page + 1);
   };
 
+  const toggleModal = () => {
+    setIsModalOpen(isOpen => !isOpen);
+  };
+
   return (
-    <Section>
-      <Container>
-        <p>Catalog page</p>
-        <MainButton
-          text="Search"
-          type="submit"
-          disabled
-          btnStyles={{ height: '48px', width: '200px' }}
-        />
-        <MainLinkButton
-          text="Rental car"
-          href="tel:+380730000000"
-          linkStyles={{ width: '168px' }}
-        />
-        <CardsGrid>
-          {allCars.map(car => (
-            <li key={car.id}>
-              <CarCard carInfo={car} favorite={null} />
-            </li>
-          ))}
-        </CardsGrid>
-        {isLoadMoreShown && (
-          <LoadMoreBtn text="Load more" onClick={handlePageChange} />
-        )}
-      </Container>
-    </Section>
+    <>
+      {isModalOpen && (
+        <CarInfoModal toggleModal={toggleModal} carInfo={currentCar} />
+      )}
+      <Section>
+        <Container>
+          <p>Catalog page</p>
+          <MainButton
+            text="Search"
+            type="submit"
+            disabled
+            btnStyles={{ height: '48px', width: '200px' }}
+          />
+          <MainLinkButton
+            text="Rental car"
+            href="tel:+380730000000"
+            linkStyles={{ width: '168px' }}
+          />
+          <CardsGrid>
+            {allCars.map(car => (
+              <li key={car.id}>
+                <CarCard
+                  carInfo={car}
+                  toggleModal={toggleModal}
+                  setCurrentCar={setCurrentCar}
+                />
+              </li>
+            ))}
+          </CardsGrid>
+          {isLoadMoreShown && (
+            <LoadMoreBtn text="Load more" onClick={handlePageChange} />
+          )}
+        </Container>
+      </Section>
+    </>
   );
 };
 

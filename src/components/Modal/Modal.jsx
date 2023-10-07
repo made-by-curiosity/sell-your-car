@@ -1,0 +1,47 @@
+import { createPortal } from 'react-dom';
+import {
+  Backdrop,
+  CloseBtnIcon,
+  CloseBtn,
+  ModalContainer,
+} from './Modal.styled';
+import icon from 'assets/icons/x.svg';
+import { useEffect } from 'react';
+
+const modalRoot = document.querySelector('#modal-root');
+
+export const Modal = ({ children, toggleModal }) => {
+  useEffect(() => {
+    const handleCloseOnEsc = e => {
+      if (e.code === 'Escape') {
+        toggleModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleCloseOnEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleCloseOnEsc);
+    };
+  }, [toggleModal]);
+
+  const onBackdropClick = e => {
+    if (e.target === e.currentTarget) {
+      toggleModal();
+    }
+  };
+
+  return createPortal(
+    <Backdrop onClick={onBackdropClick}>
+      <ModalContainer>
+        {children}
+        <CloseBtn type="button" onClick={toggleModal}>
+          <CloseBtnIcon>
+            <use href={icon + '#close'} />
+          </CloseBtnIcon>
+        </CloseBtn>
+      </ModalContainer>
+    </Backdrop>,
+    modalRoot
+  );
+};

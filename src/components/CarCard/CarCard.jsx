@@ -18,7 +18,7 @@ import car from 'assets/img/car_image.jpg';
 import { useFavorite } from 'hooks/favoriteContext';
 import { useMemo } from 'react';
 
-export const CarCard = ({ carInfo }) => {
+export const CarCard = ({ carInfo, toggleModal, setCurrentCar }) => {
   const {
     id = 9582,
     year = 2008,
@@ -61,6 +61,11 @@ export const CarCard = ({ carInfo }) => {
     e.currentTarget.src = car;
   };
 
+  const handleLearnMore = () => {
+    setCurrentCar(carInfo);
+    toggleModal();
+  };
+
   return (
     <CardContainer>
       <PhotoWrapper>
@@ -94,7 +99,7 @@ export const CarCard = ({ carInfo }) => {
           <span>{carFeature}</span>
         </AdditionalInfoWrapper>
       </AdditionalInfoContainer>
-      <MainButton text="Learn more" fullWidth />
+      <MainButton text="Learn more" fullWidth onClick={handleLearnMore} />
     </CardContainer>
   );
 };

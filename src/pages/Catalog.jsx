@@ -21,8 +21,6 @@ const Catalog = () => {
     })();
   }, []);
 
-  const carInfo = {};
-
   return (
     <Container>
       <p>Catalog page</p>

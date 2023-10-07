@@ -1,4 +1,4 @@
-import { LoadMoreBtn } from 'LoadMoreBtn/LoadMoreBtn';
+import { LoadMoreBtn } from 'components/LoadMoreBtn/LoadMoreBtn';
 import { CarCard } from 'components/CarCard/CarCard';
 import { CardsGrid } from 'components/CardsGrid/CardsGrid';
 import { Container } from 'components/Container/Container';
@@ -7,10 +7,11 @@ import { MainLinkButton } from 'components/MainLinkButton/MainLinkButton';
 import { Section } from 'components/Section/Section';
 import { useEffect, useState } from 'react';
 import { getAllCars } from 'services/sellCarsApi';
+import { PAGE, PER_PAGE } from 'utils/constants';
 
 const Catalog = () => {
   const [allCars, setAllCars] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(PAGE);
   const [isLoadMoreShown, setIsLoadMoreShown] = useState(true);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ const Catalog = () => {
 
         setAllCars(allCars => [...allCars, ...cars]);
 
-        if (cars.length <= 7) {
+        if (cars.length < PER_PAGE) {
           setIsLoadMoreShown(false);
           return;
         }

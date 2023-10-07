@@ -1,10 +1,10 @@
 import axios from 'axios';
-
-const BASE_URL = 'https://65205105906e276284c45427.mockapi.io';
+import 'utils/constants';
+import { BASE_URL, PAGE, PER_PAGE } from 'utils/constants';
 
 axios.defaults.baseURL = BASE_URL;
 
-export const getAllCars = async (page = 1, limit = 8) => {
+export const getAllCars = async (page = PAGE, limit = PER_PAGE) => {
   const res = await axios.get(`/api/cars?page=${page}&limit=${limit}`);
 
   return res.data;

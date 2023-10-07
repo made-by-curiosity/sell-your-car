@@ -14,7 +14,7 @@ export const MainLinkButton = ({
       fullHeight={fullHeight}
       linkStyles={linkStyles}
     >
-      {text}
+      <span>{text}</span>
     </ButtonLink>
   );
 };

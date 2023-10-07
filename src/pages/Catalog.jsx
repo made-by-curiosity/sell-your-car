@@ -28,11 +28,15 @@ const Catalog = () => {
         text="Search"
         type="submit"
         disabled
-        btnStyles={{ height: '48px' }}
+        btnStyles={{ height: '48px', width: '200px' }}
       />
-      <div style={{ height: '100px' }}>
-        <MainLinkButton text="Rental car" href="tel:+380730000000" />
-      </div>
+      {/* <div style={{ height: '100px' }}> */}
+      <MainLinkButton
+        text="Rental car"
+        href="tel:+380730000000"
+        linkStyles={{ width: '168px' }}
+      />
+      {/* </div> */}
       <CardsGrid>
         {allCars.map(car => (
           <li key={car.id}>

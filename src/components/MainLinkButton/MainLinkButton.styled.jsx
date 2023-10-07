@@ -26,4 +26,13 @@ export const ButtonLink = styled.a`
   &:focus {
     background-color: #0b44cd;
   }
+
+  ${props => props.linkStyles};
+
+  & > span {
+    display: inline-block;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+  }
 `;

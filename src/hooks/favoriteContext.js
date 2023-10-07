@@ -16,6 +16,10 @@ export const FavoriteProvider = ({ children }) => {
   }, [favoriteCars]);
 
   const toggleFavorite = id => {
+    if (!id) {
+      return;
+    }
+
     let updatedFavorites = [...favoriteCars, id];
 
     if (favoriteCars.includes(id)) {

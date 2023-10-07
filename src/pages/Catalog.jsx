@@ -62,7 +62,7 @@ const Catalog = () => {
         <CardsGrid>
           {allCars.map(car => (
             <li key={car.id}>
-              <CarCard carInfo={car} />
+              <CarCard carInfo={car} favorite={null} />
             </li>
           ))}
         </CardsGrid>

@@ -15,6 +15,8 @@ import { IconBtn } from 'components/IconBtn/IconBtn';
 
 import icon from 'assets/icons/normal.svg';
 import car from 'assets/img/car_image.jpg';
+import { useFavorite } from 'hooks/favoriteContext';
+import { useMemo } from 'react';
 
 export const CarCard = ({ carInfo }) => {
   const {
@@ -40,13 +42,18 @@ export const CarCard = ({ carInfo }) => {
     description = 'The Buick Enclave is a stylish and spacious SUV known for its comfortable ride and luxurious features.',
   } = carInfo;
 
+  const { favoriteCars, toggleFavorite } = useFavorite();
+
   // eslint-disable-next-line no-unused-vars
   const [street, city, country] = address.split(', ');
 
-  const carFeature = filterFeatures(...accessories, ...functionalities);
+  const carFeature = useMemo(
+    () => filterFeatures(...accessories, ...functionalities),
+    [accessories, functionalities]
+  );
 
   const handleClick = e => {
-    console.log('added to favorite');
+    toggleFavorite(id);
   };
 
   const handlePhotoLoadError = e => {
@@ -60,7 +67,11 @@ export const CarCard = ({ carInfo }) => {
         <Photo src={img} alt={description} onError={handlePhotoLoadError} />
       </PhotoWrapper>
 
-      <IconBtn icon={`${icon}#heart`} onClick={handleClick} />
+      <IconBtn
+        icon={`${icon}#heart`}
+        onClick={handleClick}
+        favorite={favoriteCars.includes(id)}
+      />
 
       <MainInfoContainer>
         <CarMainInfo>

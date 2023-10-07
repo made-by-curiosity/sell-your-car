@@ -2,7 +2,10 @@ import styled from '@emotion/styled';
 
 export const CardContainer = styled.div`
   width: 274px;
-  max-height: 426px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
 
   position: relative;
 `;
@@ -49,6 +52,7 @@ export const RentalPrice = styled.span`
 `;
 
 export const AdditionalInfoContainer = styled.div`
+  margin-top: auto;
   margin-bottom: 28px;
 
   display: flex;
@@ -56,6 +60,8 @@ export const AdditionalInfoContainer = styled.div`
   gap: 4px;
 
   color: rgba(18, 20, 23, 0.5);
+
+  overflow: hidden;
 `;
 
 export const AdditionalInfoWrapper = styled.p`

@@ -9,6 +9,9 @@ export const Button = styled.button`
   font-size: 14px;
   font-weight: 600;
   line-height: 1.43;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
 
   background-color: #3470ff;
 

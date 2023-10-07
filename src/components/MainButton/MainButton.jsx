@@ -18,7 +18,7 @@ export const MainButton = ({
       disabled={disabled}
       onClick={onClick}
     >
-      {text}
+      <span>{text}</span>
     </Button>
   );
 };

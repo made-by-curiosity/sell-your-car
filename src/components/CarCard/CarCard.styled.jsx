@@ -8,6 +8,8 @@ export const CardContainer = styled.div`
   flex-direction: column;
 
   position: relative;
+
+  overflow: hidden;
 `;
 
 export const PhotoWrapper = styled.div`
@@ -46,9 +48,23 @@ export const CarModel = styled.span`
   color: #3470ff;
 `;
 
+export const CarMainInfo = styled.span`
+  max-width: 200px;
+
+  display: inline-block;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
 export const RentalPrice = styled.span`
-  display: inline-flex;
+  min-width: 20px;
+
+  display: inline-block;
   margin-left: auto;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const AdditionalInfoContainer = styled.div`

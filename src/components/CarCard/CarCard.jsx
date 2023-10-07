@@ -2,6 +2,7 @@ import { filterFeatures } from 'utils/carFeaturesSorting';
 import {
   AdditionalInfoContainer,
   AdditionalInfoWrapper,
+  CarMainInfo,
   CarModel,
   CardContainer,
   MainInfoContainer,
@@ -62,11 +63,11 @@ export const CarCard = ({ carInfo }) => {
       <IconBtn icon={`${icon}#heart`} onClick={handleClick} />
 
       <MainInfoContainer>
-        <span>
+        <CarMainInfo>
           {make + ' '}
           <CarModel>{model + ', '}</CarModel>
           {year}
-        </span>
+        </CarMainInfo>
         <RentalPrice>{rentalPrice}</RentalPrice>
       </MainInfoContainer>
       <AdditionalInfoContainer>

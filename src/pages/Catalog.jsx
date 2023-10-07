@@ -4,7 +4,6 @@ import { CarCard } from 'components/CarCard/CarCard';
 import { CardsGrid } from 'components/CardsGrid/CardsGrid';
 import { Container } from 'components/Container/Container';
 import { MainButton } from 'components/MainButton/MainButton';
-import { MainLinkButton } from 'components/MainLinkButton/MainLinkButton';
 import { Section } from 'components/Section/Section';
 import { CarInfoModal } from 'components/CarInfoModal/CarInfoModal';
 import { getAllCars } from 'services/sellCarsApi';
@@ -58,18 +57,13 @@ const Catalog = () => {
       )}
       <Section>
         <Container>
-          <p>Catalog page</p>
           <MainButton
             text="Search"
             type="submit"
             disabled
             btnStyles={{ height: '48px', width: '200px' }}
           />
-          <MainLinkButton
-            text="Rental car"
-            href="tel:+380730000000"
-            linkStyles={{ width: '168px' }}
-          />
+
           <CardsGrid>
             {allCars.map(car => (
               <li key={car.id}>

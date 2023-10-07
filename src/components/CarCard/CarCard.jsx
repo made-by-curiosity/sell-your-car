@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+import { useFavorite } from 'hooks/favoriteContext';
 import { filterFeatures } from 'utils/carFeaturesSorting';
 import {
   AdditionalInfoContainer,
@@ -14,15 +16,13 @@ import { MainButton } from 'components/MainButton/MainButton';
 import { IconBtn } from 'components/IconBtn/IconBtn';
 
 import icon from 'assets/icons/normal.svg';
-import car from 'assets/img/car_image.jpg';
-import { useFavorite } from 'hooks/favoriteContext';
-import { useMemo } from 'react';
+import default_img from 'assets/img/no_image_available.jpeg';
 
 export const CarCard = ({ carInfo, toggleModal, setCurrentCar }) => {
   const {
     id = 9582,
     year = 2008,
-    img = car,
+    img = default_img,
     make = 'Buick',
     model = 'Enclave',
     rentalPrice = '$40',
@@ -44,8 +44,7 @@ export const CarCard = ({ carInfo, toggleModal, setCurrentCar }) => {
 
   const { favoriteCars, toggleFavorite } = useFavorite();
 
-  // eslint-disable-next-line no-unused-vars
-  const [street, city, country] = address.split(', ');
+  const [, city, country] = address.split(', ');
 
   const carFeature = useMemo(
     () => filterFeatures(...accessories, ...functionalities),
@@ -58,7 +57,7 @@ export const CarCard = ({ carInfo, toggleModal, setCurrentCar }) => {
 
   const handlePhotoLoadError = e => {
     e.currentTarget.onerror = null;
-    e.currentTarget.src = car;
+    e.currentTarget.src = default_img;
   };
 
   const handleLearnMore = () => {

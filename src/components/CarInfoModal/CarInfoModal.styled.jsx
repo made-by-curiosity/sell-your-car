@@ -111,16 +111,9 @@ export const AdditionalInfoWrapper = styled.p`
 export const FeaturesList = styled.ul`
   width: 100%;
   display: flex;
-  gap: 6px;
-
-  & > li {
-    white-space: nowrap;
-  }
-
-  & > li:last-child {
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  flex-wrap: wrap;
+  column-gap: 6px;
+  row-gap: 4px;
 
   & > li:not(:last-child):after {
     content: '|';
@@ -131,23 +124,24 @@ export const FeaturesList = styled.ul`
   }
 `;
 
-export const ConditionsContainer = styled.div``;
+export const ConditionsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+`;
 
 export const Condition = styled.span`
   padding: 7px 14px;
 
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  font-family: Montserrat;
+  line-height: 18px;
+  letter-spacing: -0.24px;
 
   border-radius: 35px;
   background-color: #f9f9f9;
 `;
 
 export const HighlightedValue = styled.span`
-  color: #3470ff;
-  font-family: Montserrat;
   font-weight: 600;
-  line-height: 18px;
-  letter-spacing: -0.24px;
+  color: #3470ff;
 `;

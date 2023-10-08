@@ -15,7 +15,6 @@ import {
   MainInfoContainer,
   Photo,
   PhotoWrapper,
-  RentalPrice,
 } from './CarInfoModal.styled';
 
 import default_img from 'assets/img/no_image_available.jpeg';
@@ -23,8 +22,6 @@ import default_img from 'assets/img/no_image_available.jpeg';
 import { MainLinkButton } from 'components/MainLinkButton/MainLinkButton';
 
 export const CarInfoModal = ({ carInfo, toggleModal }) => {
-  console.log(carInfo);
-
   const {
     id,
     year,
@@ -44,6 +41,11 @@ export const CarInfoModal = ({ carInfo, toggleModal }) => {
   } = carInfo;
 
   const [, city, country] = address.split(', ');
+  const [minimumAge, validLicense, additionalRequirement] =
+    rentalConditions.split('\n');
+  const [, age] = minimumAge.split(': ');
+  const transformedMileage = mileage.toLocaleString('en-US');
+  const transformedPrice = `${rentalPrice.slice(1)}$`;
 
   const handlePhotoLoadError = e => {
     e.currentTarget.onerror = null;
@@ -101,15 +103,15 @@ export const CarInfoModal = ({ carInfo, toggleModal }) => {
           <InfoSectionName>Rental Conditions:</InfoSectionName>
           <ConditionsContainer>
             <Condition>
-              Minimum age: <HighlightedValue>{rentalPrice}</HighlightedValue>
+              Minimum age: <HighlightedValue>{'' + age}</HighlightedValue>
             </Condition>
-            <Condition>Valid driver’s license</Condition>
-            <Condition>Security deposite required</Condition>
+            <Condition>{validLicense}</Condition>
+            <Condition>{additionalRequirement}</Condition>
             <Condition>
-              Mileage: <HighlightedValue>{mileage}</HighlightedValue>
+              Mileage: <HighlightedValue>{transformedMileage}</HighlightedValue>
             </Condition>
             <Condition>
-              Price: <HighlightedValue>{rentalPrice}</HighlightedValue>
+              Price: <HighlightedValue>{transformedPrice}</HighlightedValue>
             </Condition>
           </ConditionsContainer>
         </InfoWrapper>

@@ -16,7 +16,7 @@ import { MainButton } from 'components/MainButton/MainButton';
 import { IconBtn } from 'components/IconBtn/IconBtn';
 
 import icon from 'assets/icons/normal.svg';
-import default_img from 'assets/img/no_image_available.jpeg';
+import { handlePhotoLoadError } from 'utils/handlePhotoLoadError';
 
 export const CarCard = ({
   carInfo,
@@ -27,7 +27,7 @@ export const CarCard = ({
   const {
     id,
     year,
-    img = default_img,
+    img,
     make,
     model,
     rentalPrice,
@@ -50,11 +50,6 @@ export const CarCard = ({
 
   const handleClick = e => {
     toggleFavorite(id);
-  };
-
-  const handlePhotoLoadError = e => {
-    e.currentTarget.onerror = null;
-    e.currentTarget.src = default_img;
   };
 
   const handleLearnMore = () => {

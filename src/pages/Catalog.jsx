@@ -6,7 +6,7 @@ import { Container } from 'components/Container/Container';
 import { MainButton } from 'components/MainButton/MainButton';
 import { Section } from 'components/Section/Section';
 import { CarInfoModal } from 'components/CarInfoModal/CarInfoModal';
-import { getAllCars } from 'services/sellCarsApi';
+import { getAllCarsPerPage } from 'services/sellCarsApi';
 import { PAGE, PER_PAGE } from 'utils/constants';
 
 const Catalog = () => {
@@ -22,7 +22,7 @@ const Catalog = () => {
     (async () => {
       try {
         setIsLoadingMoreCars(true);
-        const cars = await getAllCars(page);
+        const cars = await getAllCarsPerPage(page);
         setIsLoadingMoreCars(false);
 
         if (page === 1) {

@@ -18,13 +18,13 @@ import {
   PhotoWrapper,
 } from './CarInfoModal.styled';
 
-import default_img from 'assets/img/no_image_available.jpeg';
+import { handlePhotoLoadError } from 'utils/handlePhotoLoadError';
 
 export const CarInfoModal = ({ carInfo, toggleModal }) => {
   const {
     id,
     year,
-    img = default_img,
+    img,
     make,
     model,
     rentalPrice,
@@ -45,11 +45,6 @@ export const CarInfoModal = ({ carInfo, toggleModal }) => {
   const [, age] = minimumAge.split(': ');
   const transformedMileage = mileage.toLocaleString('en-US');
   const transformedPrice = `${rentalPrice.slice(1)}$`;
-
-  const handlePhotoLoadError = e => {
-    e.currentTarget.onerror = null;
-    e.currentTarget.src = default_img;
-  };
 
   return (
     <Modal toggleModal={toggleModal}>

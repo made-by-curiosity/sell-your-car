@@ -65,6 +65,7 @@ export const CarDescription = styled.p`
 
   font-size: 14px;
   line-height: 1.43;
+  word-break: break-all;
 `;
 
 export const InfoSectionName = styled.p`
@@ -115,6 +116,8 @@ export const FeaturesList = styled.ul`
   column-gap: 6px;
   row-gap: 4px;
 
+  word-break: break-all;
+
   & > li:not(:last-child):after {
     content: '|';
     height: 16px;
@@ -136,6 +139,7 @@ export const Condition = styled.span`
   font-family: Montserrat;
   line-height: 18px;
   letter-spacing: -0.24px;
+  word-break: break-all;
 
   border-radius: 35px;
   background-color: #f9f9f9;

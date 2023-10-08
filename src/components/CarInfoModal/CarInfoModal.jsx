@@ -1,4 +1,5 @@
 import { Modal } from 'components/Modal/Modal';
+import { MainLinkButton } from 'components/MainLinkButton/MainLinkButton';
 import {
   AdditionalInfoContainer,
   AdditionalInfoWrapper,
@@ -18,8 +19,6 @@ import {
 } from './CarInfoModal.styled';
 
 import default_img from 'assets/img/no_image_available.jpeg';
-
-import { MainLinkButton } from 'components/MainLinkButton/MainLinkButton';
 
 export const CarInfoModal = ({ carInfo, toggleModal }) => {
   const {

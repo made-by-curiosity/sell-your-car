@@ -13,22 +13,21 @@ const Catalog = () => {
   const [allCars, setAllCars] = useState([]);
   const [page, setPage] = useState(PAGE);
   const [isLoadMoreShown, setIsLoadMoreShown] = useState(true);
+  const [isLoadingMoreCars, setIsLoadingMoreCars] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentCar, setCurrentCar] = useState(null);
 
   useEffect(() => {
     (async () => {
       try {
-        if (page === 1) {
-          setIsLoadMoreShown(false);
-          const cars = await getAllCars(page);
-          setIsLoadMoreShown(true);
+        setIsLoadingMoreCars(true);
+        const cars = await getAllCars(page);
+        setIsLoadingMoreCars(false);
 
+        if (page === 1) {
           setAllCars(cars);
           return;
         }
-
-        const cars = await getAllCars(page);
 
         setAllCars(allCars => [...allCars, ...cars]);
 
@@ -76,7 +75,11 @@ const Catalog = () => {
             ))}
           </CardsGrid>
           {isLoadMoreShown && (
-            <LoadMoreBtn text="Load more" onClick={handlePageChange} />
+            <LoadMoreBtn
+              text="Load more"
+              onClick={handlePageChange}
+              isLoadingMoreCars={isLoadingMoreCars}
+            />
           )}
         </Container>
       </Section>

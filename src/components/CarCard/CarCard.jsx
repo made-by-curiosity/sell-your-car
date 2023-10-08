@@ -20,26 +20,18 @@ import default_img from 'assets/img/no_image_available.jpeg';
 
 export const CarCard = ({ carInfo, toggleModal, setCurrentCar }) => {
   const {
-    id = 9582,
-    year = 2008,
+    id,
+    year,
     img = default_img,
-    make = 'Buick',
-    model = 'Enclave',
-    rentalPrice = '$40',
-    rentalCompany = 'Luxury Car Rentals',
-    address = '123 Example Street, Kiev, Ukraine',
-    type = 'SUV',
-    accessories = [
-      'Leather seats',
-      'Panoramic sunroof',
-      'Premium audio system',
-    ],
-    functionalities = [
-      'Power liftgate',
-      'Remote start',
-      'Blind-spot monitoring',
-    ],
-    description = 'The Buick Enclave is a stylish and spacious SUV known for its comfortable ride and luxurious features.',
+    make,
+    model,
+    rentalPrice,
+    rentalCompany,
+    address,
+    type,
+    accessories,
+    functionalities,
+    description,
   } = carInfo;
 
   const { favoriteCars, toggleFavorite } = useFavorite();

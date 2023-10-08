@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 
 export const ButtonWrapper = styled.div`
-  text-align: center;
+  display: flex;
+
+  justify-content: center;
 `;
 
 export const LoadButton = styled.button`

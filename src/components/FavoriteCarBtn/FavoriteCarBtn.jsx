@@ -7,18 +7,11 @@ import {
   PhotoWrapper,
 } from './FavoriteCarBtn.styled';
 
-import default_img from 'assets/img/no_image_available.jpeg';
-
-export const FavoriteCarBtn = ({
-  carInfo,
-  toggleFavorite,
-  activeCar,
-  setActiveCar,
-}) => {
-  const { year, make, model, type, img = default_img, id } = carInfo;
+export const FavoriteCarBtn = ({ carInfo, activeCar, setActiveCar }) => {
+  const { year, make, model, type, img, id } = carInfo;
 
   const handleChange = e => {
-    setActiveCar(Number(e.target.value));
+    setActiveCar(carInfo);
   };
 
   return (
@@ -28,7 +21,7 @@ export const FavoriteCarBtn = ({
           type="radio"
           name="car-item"
           value={id}
-          checked={activeCar === id}
+          checked={activeCar?.id === id}
           onChange={handleChange}
         />
         <div>

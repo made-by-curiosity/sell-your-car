@@ -1,7 +1,9 @@
 import { Container } from 'components/Container/Container';
 import { FavoriteCarBtn } from 'components/FavoriteCarBtn/FavoriteCarBtn';
+import { FavoriteCarView } from 'components/FavoriteCarView/FavoriteCarView';
 import { FavoritesSidebar } from 'components/FavoritesSidebar/FavoritesSidebar';
 import { Section } from 'components/Section/Section';
+import { SectionWrapper } from 'components/SectionWrapper/SectionWrapper';
 import { useFavorite } from 'hooks/favoriteContext';
 import { useEffect, useState } from 'react';
 import { getAllCars } from 'services/sellCarsApi';
@@ -32,7 +34,7 @@ const Favorites = () => {
       return;
     }
 
-    setActiveCar(filteredCars[0].id);
+    setActiveCar(filteredCars[0]);
   }, [filteredCars]);
 
   useEffect(() => {
@@ -42,22 +44,29 @@ const Favorites = () => {
   return (
     <Section>
       <Container>
-        <FavoritesSidebar>
-          {!!favoriteCars.length && (
-            <ul>
-              {filteredCars.map(car => (
-                <li key={car.id}>
-                  <FavoriteCarBtn
-                    carInfo={car}
-                    toggleFavorite={toggleFavorite}
-                    activeCar={activeCar}
-                    setActiveCar={setActiveCar}
-                  />
-                </li>
-              ))}
-            </ul>
-          )}
-        </FavoritesSidebar>
+        {!!favoriteCars.length && (
+          <SectionWrapper>
+            <FavoritesSidebar>
+              <ul>
+                {filteredCars.map(car => (
+                  <li key={car.id}>
+                    <FavoriteCarBtn
+                      carInfo={car}
+                      activeCar={activeCar}
+                      setActiveCar={setActiveCar}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </FavoritesSidebar>
+            {activeCar && (
+              <FavoriteCarView
+                carInfo={activeCar}
+                toggleFavorite={toggleFavorite}
+              />
+            )}
+          </SectionWrapper>
+        )}
       </Container>
     </Section>
   );

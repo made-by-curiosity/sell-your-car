@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { LoadMoreBtn } from 'components/LoadMoreBtn/LoadMoreBtn';
 import { CarCard } from 'components/CarCard/CarCard';
 import { CardsGrid } from 'components/CardsGrid/CardsGrid';
@@ -16,6 +16,7 @@ const Catalog = () => {
   const [isLoadingMoreCars, setIsLoadingMoreCars] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentCar, setCurrentCar] = useState(null);
+  const carsCardRef = useRef();
 
   useEffect(() => {
     (async () => {
@@ -41,6 +42,13 @@ const Catalog = () => {
     })();
   }, [page]);
 
+  useEffect(() => {
+    if (allCars.length <= PER_PAGE) {
+      return;
+    }
+    smoothScrollOnLoadMore();
+  }, [allCars]);
+
   const handlePageChange = () => {
     setPage(page => page + 1);
   };
@@ -48,6 +56,15 @@ const Catalog = () => {
   const toggleModal = () => {
     setIsModalOpen(isOpen => !isOpen);
   };
+
+  function smoothScrollOnLoadMore() {
+    const { height: cardHeight } =
+      carsCardRef.current.firstElementChild.getBoundingClientRect();
+    window.scrollBy({
+      top: cardHeight,
+      behavior: 'smooth',
+    });
+  }
 
   return (
     <>
@@ -70,6 +87,7 @@ const Catalog = () => {
                   carInfo={car}
                   toggleModal={toggleModal}
                   setCurrentCar={setCurrentCar}
+                  carsCardRef={carsCardRef}
                 />
               </li>
             ))}

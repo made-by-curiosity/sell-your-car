@@ -18,7 +18,12 @@ import { IconBtn } from 'components/IconBtn/IconBtn';
 import icon from 'assets/icons/normal.svg';
 import default_img from 'assets/img/no_image_available.jpeg';
 
-export const CarCard = ({ carInfo, toggleModal, setCurrentCar }) => {
+export const CarCard = ({
+  carInfo,
+  toggleModal,
+  setCurrentCar,
+  carsCardRef,
+}) => {
   const {
     id,
     year,
@@ -58,7 +63,7 @@ export const CarCard = ({ carInfo, toggleModal, setCurrentCar }) => {
   };
 
   return (
-    <CardContainer>
+    <CardContainer ref={carsCardRef}>
       <PhotoWrapper>
         <Photo src={img} alt={description} onError={handlePhotoLoadError} />
       </PhotoWrapper>

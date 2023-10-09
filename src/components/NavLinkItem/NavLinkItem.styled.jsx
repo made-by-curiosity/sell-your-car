@@ -2,26 +2,35 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const StyledNavLink = styled(NavLink)`
-  padding: 10px 5px;
+  padding: 14px;
 
   display: inline-flex;
 
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 600;
-  color: inherit;
+  color: #ffffff;
+
+  border: 1px solid transparent;
 
   border-radius: 5px;
 
-  transition: background-color 200ms ease-out;
-
-  &.active {
-    background-color: #3470ff;
-    color: #ffffff;
-  }
+  transition: border 200ms ease-out;
 
   &:hover,
   &:focus {
-    background-color: #0b44cd;
+    border: 1px solid #0b44cd;
+
     color: #ffffff;
+  }
+
+  &.active {
+    border: 1px solid #3470ff;
+    color: orange;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 20px;
+
+    font-size: 20px;
   }
 `;

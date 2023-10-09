@@ -8,7 +8,7 @@ export const LogoSvg = styled.svg`
 `;
 
 export const LogoWrapper = styled.div`
-  width: 100%;
+  width: 40px;
   height: 100%;
 
   display: flex;

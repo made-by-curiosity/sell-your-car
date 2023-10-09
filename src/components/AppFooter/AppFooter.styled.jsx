@@ -8,11 +8,19 @@ export const FooterContainer = styled.footer`
   align-items: center;
   gap: 4px;
   flex-shrink: 0;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
 
-  background-color: #f9f9f9;
+  background-color: rgba(0, 0, 0, 0.9);
 
   & > a {
-    font-weight: 600;
-    color: black;
+    color: rgba(255, 255, 255, 0.8);
+
+    transition: color 200ms ease-out;
+
+    &:hover,
+    &:focus {
+      color: rgba(255, 255, 255, 1);
+    }
   }
 `;

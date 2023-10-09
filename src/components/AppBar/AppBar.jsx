@@ -1,17 +1,17 @@
 import { Navigation } from 'components/Navigation/Navigation';
-import { HeaderWrapper, PageHeader } from './AppBar.styled';
+import { HeaderWrapper, LinkLogo, LogoText, PageHeader } from './AppBar.styled';
 import { Container } from 'components/Container/Container';
 import { CompanyLogo } from 'components/CompanyLogo/CompanyLogo';
-import { Link } from 'react-router-dom';
 
 export const AppBar = () => {
   return (
     <PageHeader>
       <Container>
         <HeaderWrapper>
-          <Link to="/">
+          <LinkLogo to="/">
             <CompanyLogo />
-          </Link>
+            <LogoText>Best rentals</LogoText>
+          </LinkLogo>
           <Navigation />
         </HeaderWrapper>
       </Container>

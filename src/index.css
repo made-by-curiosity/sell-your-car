@@ -37,6 +37,12 @@ body {
 	margin: 0;
 	font-family: 'Manrope', sans-serif;
 	font-size: 12px;
+
+	& #root {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+	}
 }
 
 code {

@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 
 export const PageHeader = styled.header`
-  /* padding: 0 30px; */
+  padding: 20px 0;
+  background-color: #f9f9f9;
 `;
 
 export const HeaderWrapper = styled.div`

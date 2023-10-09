@@ -4,12 +4,8 @@ export const ButtonWrapper = styled.div`
   height: 100px;
   width: 150px;
 
-  margin-right: 10px;
-
   @media screen and (min-width: 768px) {
     width: 100%;
-    margin-right: 0px;
-    margin-bottom: 20px;
   }
 `;
 

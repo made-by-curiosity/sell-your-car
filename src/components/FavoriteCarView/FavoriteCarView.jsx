@@ -2,6 +2,7 @@ import { handlePhotoLoadError } from 'utils/handlePhotoLoadError';
 import {
   AdditionalInfoContainer,
   AdditionalInfoWrapper,
+  BtnWrapper,
   CarContainer,
   CarDescription,
   CarMainInfo,
@@ -21,8 +22,9 @@ import {
 import { MainLinkButton } from 'components/MainLinkButton/MainLinkButton';
 
 import default_img from 'assets/img/no_image_available.jpeg';
+import { SecondaryButton } from 'components/SecondaryButton/SecondaryButton';
 
-export const FavoriteCarView = ({ carInfo }) => {
+export const FavoriteCarView = ({ carInfo, toggleFavorite }) => {
   const {
     id,
     year,
@@ -81,7 +83,6 @@ export const FavoriteCarView = ({ carInfo }) => {
         <InfoWrapper>
           <CarDescription>{description}</CarDescription>
         </InfoWrapper>
-
         <InfoWrapper>
           <InfoSectionName>Accessories and functionalities:</InfoSectionName>
           <AdditionalInfoContainer>
@@ -97,7 +98,6 @@ export const FavoriteCarView = ({ carInfo }) => {
             </FeaturesList>
           </AdditionalInfoContainer>
         </InfoWrapper>
-
         <InfoWrapper>
           <InfoSectionName>Rental Conditions:</InfoSectionName>
           <ConditionsContainer>
@@ -114,11 +114,17 @@ export const FavoriteCarView = ({ carInfo }) => {
             </Condition>
           </ConditionsContainer>
         </InfoWrapper>
-        <MainLinkButton
-          text="Rental car"
-          href="tel:+380730000000"
-          linkStyles={{ width: '168px' }}
-        />
+        <BtnWrapper>
+          <MainLinkButton
+            text="Rental car"
+            href="tel:+380730000000"
+            linkStyles={{ width: '168px' }}
+          />
+          <SecondaryButton
+            text="Remove from favorites"
+            onClick={() => toggleFavorite(id)}
+          />
+        </BtnWrapper>
       </CarContainer>
     </ViewContainer>
   );

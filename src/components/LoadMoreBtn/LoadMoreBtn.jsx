@@ -1,5 +1,6 @@
 import { MagnifyingGlass } from 'react-loader-spinner';
-import { ButtonWrapper, LoadButton } from './LoadMoreBtn.styled';
+import { ButtonWrapper } from './LoadMoreBtn.styled';
+import { SecondaryButton } from 'components/SecondaryButton/SecondaryButton';
 
 export const LoadMoreBtn = ({ text, disabled, onClick, isLoadingMoreCars }) => {
   return (
@@ -10,15 +11,17 @@ export const LoadMoreBtn = ({ text, disabled, onClick, isLoadingMoreCars }) => {
           height="80"
           width="80"
           ariaLabel="MagnifyingGlass-loading"
-          wrapperStyle={{}}
           wrapperClass="MagnifyingGlass-wrapper"
           glassColor="#c0efff"
           color="#3470ff"
         />
       ) : (
-        <LoadButton type="button" disabled={disabled} onClick={onClick}>
-          {text}
-        </LoadButton>
+        <SecondaryButton
+          type="button"
+          text={text}
+          disabled={disabled}
+          onClick={onClick}
+        />
       )}
     </ButtonWrapper>
   );

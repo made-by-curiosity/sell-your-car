@@ -163,3 +163,9 @@ export const HighlightedValue = styled.span`
   font-weight: 600;
   color: #3470ff;
 `;
+
+export const BtnWrapper = styled.div`
+  display: flex;
+
+  gap: 20px;
+`;

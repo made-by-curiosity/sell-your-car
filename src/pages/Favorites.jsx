@@ -37,10 +37,6 @@ const Favorites = () => {
     setActiveCar(filteredCars[0]);
   }, [filteredCars]);
 
-  useEffect(() => {
-    console.log(activeCar);
-  }, [activeCar]);
-
   return (
     <Section>
       <Container>

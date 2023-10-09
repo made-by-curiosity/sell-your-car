@@ -4,6 +4,7 @@ import {
   CloseBtnIcon,
   CloseBtn,
   ModalContainer,
+  ContentWrapper,
 } from './Modal.styled';
 import icon from 'assets/icons/x.svg';
 import { useEffect } from 'react';
@@ -34,7 +35,8 @@ export const Modal = ({ children, toggleModal }) => {
   return createPortal(
     <Backdrop onClick={onBackdropClick}>
       <ModalContainer>
-        {children}
+        <ContentWrapper>{children}</ContentWrapper>
+
         <CloseBtn type="button" onClick={toggleModal}>
           <CloseBtnIcon>
             <use href={icon + '#close'} />

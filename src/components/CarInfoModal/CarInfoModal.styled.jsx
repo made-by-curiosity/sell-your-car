@@ -7,6 +7,12 @@ export const CarContainer = styled.div`
   display: flex;
   flex-direction: column;
 
+  overflow: auto;
+`;
+
+export const PhotoContainer = styled.div`
+  height: 248px;
+  border-radius: 14px;
   overflow: hidden;
 `;
 
@@ -15,7 +21,6 @@ export const PhotoWrapper = styled.div`
   margin-bottom: 14px;
 
   border-radius: 14px;
-  overflow: hidden;
 
   background: linear-gradient(
       180deg,
@@ -65,7 +70,6 @@ export const CarDescription = styled.p`
 
   font-size: 14px;
   line-height: 1.43;
-  word-break: break-all;
 `;
 
 export const InfoSectionName = styled.p`

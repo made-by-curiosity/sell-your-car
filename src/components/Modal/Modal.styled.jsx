@@ -13,6 +13,13 @@ export const Backdrop = styled.div`
 
   background-color: rgba(18, 20, 23, 0.5);
 `;
+
+export const ContentWrapper = styled.div`
+  max-height: 80vh;
+
+  overflow: auto;
+`;
+
 export const ModalContainer = styled.div`
   max-width: 95%;
   max-height: 95%;
@@ -23,6 +30,8 @@ export const ModalContainer = styled.div`
   background-color: #fff;
 
   border-radius: 24px;
+
+  overflow: hidden;
 `;
 
 export const CloseBtn = styled.button`

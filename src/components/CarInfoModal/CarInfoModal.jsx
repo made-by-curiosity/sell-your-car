@@ -15,6 +15,7 @@ import {
   InfoWrapper,
   MainInfoContainer,
   Photo,
+  PhotoContainer,
   PhotoWrapper,
 } from './CarInfoModal.styled';
 
@@ -50,10 +51,11 @@ export const CarInfoModal = ({ carInfo, toggleModal }) => {
   return (
     <Modal toggleModal={toggleModal}>
       <CarContainer>
-        <PhotoWrapper>
-          <Photo src={img} alt={description} onError={handlePhotoLoadError} />
-        </PhotoWrapper>
-
+        <PhotoContainer>
+          <PhotoWrapper>
+            <Photo src={img} alt={description} onError={handlePhotoLoadError} />
+          </PhotoWrapper>
+        </PhotoContainer>
         <InfoWrapper>
           <MainInfoContainer>
             <CarMainInfo>
@@ -77,7 +79,6 @@ export const CarInfoModal = ({ carInfo, toggleModal }) => {
           </AdditionalInfoContainer>
           <CarDescription>{description}</CarDescription>
         </InfoWrapper>
-
         <InfoWrapper>
           <InfoSectionName>Accessories and functionalities:</InfoSectionName>
           <AdditionalInfoContainer>
@@ -93,7 +94,6 @@ export const CarInfoModal = ({ carInfo, toggleModal }) => {
             </FeaturesList>
           </AdditionalInfoContainer>
         </InfoWrapper>
-
         <InfoWrapper>
           <InfoSectionName>Rental Conditions:</InfoSectionName>
           <ConditionsContainer>
@@ -110,7 +110,6 @@ export const CarInfoModal = ({ carInfo, toggleModal }) => {
             </Condition>
           </ConditionsContainer>
         </InfoWrapper>
-
         <MainLinkButton
           text="Rental car"
           href="tel:+380730000000"

@@ -20,11 +20,13 @@ import {
 } from './FavoriteCarView.styled';
 import { MainLinkButton } from 'components/MainLinkButton/MainLinkButton';
 
+import default_img from 'assets/img/no_image_available.jpeg';
+
 export const FavoriteCarView = ({ carInfo }) => {
   const {
     id,
     year,
-    img,
+    img = default_img,
     make,
     model,
     rentalPrice,

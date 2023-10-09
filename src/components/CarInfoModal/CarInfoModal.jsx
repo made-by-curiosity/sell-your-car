@@ -19,12 +19,13 @@ import {
 } from './CarInfoModal.styled';
 
 import { handlePhotoLoadError } from 'utils/handlePhotoLoadError';
+import default_img from 'assets/img/no_image_available.jpeg';
 
 export const CarInfoModal = ({ carInfo, toggleModal }) => {
   const {
     id,
     year,
-    img,
+    img = default_img,
     make,
     model,
     rentalPrice,

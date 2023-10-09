@@ -17,6 +17,7 @@ import { IconBtn } from 'components/IconBtn/IconBtn';
 
 import icon from 'assets/icons/normal.svg';
 import { handlePhotoLoadError } from 'utils/handlePhotoLoadError';
+import default_img from 'assets/img/no_image_available.jpeg';
 
 export const CarCard = ({
   carInfo,
@@ -27,7 +28,7 @@ export const CarCard = ({
   const {
     id,
     year,
-    img,
+    img = default_img,
     make,
     model,
     rentalPrice,

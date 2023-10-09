@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const CardContainer = styled.div`
-  width: 274px;
+  width: 351px;
   height: 100%;
 
   display: flex;
@@ -10,6 +10,14 @@ export const CardContainer = styled.div`
   position: relative;
 
   overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    width: 330px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 274px;
+  }
 `;
 
 export const PhotoWrapper = styled.div`

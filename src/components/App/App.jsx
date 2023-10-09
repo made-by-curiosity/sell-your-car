@@ -2,8 +2,8 @@ import { Layout } from 'components/Layout/Layout.jsx';
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-const Catalog = lazy(() => import('../../pages/Catalog.jsx'));
 const Home = lazy(() => import('../../pages/Home.jsx'));
+const Catalog = lazy(() => import('../../pages/Catalog.jsx'));
 const Favorites = lazy(() => import('../../pages/Favorites.jsx'));
 
 export const App = () => {

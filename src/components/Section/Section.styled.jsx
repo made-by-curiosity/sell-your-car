@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const MainSection = styled.section`
+  height: 100%;
   padding: 20px 0 50px;
 
   @media screen and (min-width: 768px) {

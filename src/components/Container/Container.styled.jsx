@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
 export const MainContainer = styled.div`
+  height: 100%;
+
   min-width: 320px;
   max-width: 375px;
 

@@ -5,7 +5,7 @@ export const NoFavoriteMessage = () => {
     <MessageContainer>
       <p>You have no added cars so far.</p>
       <p>
-        You can find more cars{' '}
+        Find more cars{' '}
         <RedirectionLink to="/catalog"> in our catalog</RedirectionLink>
       </p>
     </MessageContainer>

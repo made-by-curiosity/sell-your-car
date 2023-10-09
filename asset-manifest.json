@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/sell-your-car/static/css/main.409d75d8.css",
-    "main.js": "/sell-your-car/static/js/main.617531ec.js",
+    "main.js": "/sell-your-car/static/js/main.e38cc8d0.js",
     "static/js/415.85600fbd.chunk.js": "/sell-your-car/static/js/415.85600fbd.chunk.js",
     "static/js/288.70dc3d37.chunk.js": "/sell-your-car/static/js/288.70dc3d37.chunk.js",
-    "static/js/588.f356e71e.chunk.js": "/sell-your-car/static/js/588.f356e71e.chunk.js",
+    "static/js/522.aec77b56.chunk.js": "/sell-your-car/static/js/522.aec77b56.chunk.js",
     "static/js/279.3c8efb91.chunk.js": "/sell-your-car/static/js/279.3c8efb91.chunk.js",
     "static/js/727.c434dcd9.chunk.js": "/sell-your-car/static/js/727.c434dcd9.chunk.js",
     "static/media/Montserrat-SemiBold.ttf": "/sell-your-car/static/media/Montserrat-SemiBold.93b37a465fc4ec0d0415.ttf",
@@ -18,15 +18,15 @@
     "static/media/normal.svg": "/sell-your-car/static/media/normal.7d6d70062cbaa5f87a31751fece743c7.svg",
     "static/media/x.svg": "/sell-your-car/static/media/x.179edadd79e29bae48de61492fdb52f3.svg",
     "main.409d75d8.css.map": "/sell-your-car/static/css/main.409d75d8.css.map",
-    "main.617531ec.js.map": "/sell-your-car/static/js/main.617531ec.js.map",
+    "main.e38cc8d0.js.map": "/sell-your-car/static/js/main.e38cc8d0.js.map",
     "415.85600fbd.chunk.js.map": "/sell-your-car/static/js/415.85600fbd.chunk.js.map",
     "288.70dc3d37.chunk.js.map": "/sell-your-car/static/js/288.70dc3d37.chunk.js.map",
-    "588.f356e71e.chunk.js.map": "/sell-your-car/static/js/588.f356e71e.chunk.js.map",
+    "522.aec77b56.chunk.js.map": "/sell-your-car/static/js/522.aec77b56.chunk.js.map",
     "279.3c8efb91.chunk.js.map": "/sell-your-car/static/js/279.3c8efb91.chunk.js.map",
     "727.c434dcd9.chunk.js.map": "/sell-your-car/static/js/727.c434dcd9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.409d75d8.css",
-    "static/js/main.617531ec.js"
+    "static/js/main.e38cc8d0.js"
   ]
 }

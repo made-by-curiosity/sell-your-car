@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import default_img from 'assets/img/no_image_available.jpeg';
+
 export const ButtonWrapper = styled.div`
   height: 100px;
   width: 150px;
@@ -25,49 +27,52 @@ export const OriginalHiddenRadio = styled.input`
   appearance: none;
 
   &:focus ~ div {
-    background-color: #add8e6;
-  }
-
-  & ~ div {
-    height: 100%;
-    padding: 10px;
-
-    background-color: #b0c4de;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    transition: background-color 200ms ease-out;
-
-    &:hover {
-      background-color: #add8e6;
-    }
+    box-shadow: 0px 0px 44px 16px rgba(0, 0, 0, 0.75) inset;
+    -webkit-box-shadow: 0px 0px 44px 16px rgba(0, 0, 0, 0.75) inset;
+    -moz-box-shadow: 0px 0px 44px 16px rgba(0, 0, 0, 0.75) inset;
   }
 
   &:checked ~ div {
-    background-color: #4682b4;
+    box-shadow: 0px 0px 44px 16px rgba(0, 0, 0, 0.75) inset;
+    -webkit-box-shadow: 0px 0px 44px 16px rgba(0, 0, 0, 0.75) inset;
+    -moz-box-shadow: 0px 0px 44px 16px rgba(0, 0, 0, 0.75) inset;
   }
 `;
 
-export const PhotoWrapper = styled.div`
-  height: 50px;
-  width: 50px;
-  margin-bottom: 14px;
+export const ContentWrapper = styled.div`
+  height: 100%;
+  padding: 10px;
 
-  border-radius: 14px;
+  background-color: #b0c4de;
+
+  border-radius: 20px;
+
   overflow: hidden;
 
-  background: linear-gradient(
-      180deg,
-      rgba(18, 20, 23, 0.5) 2.5%,
-      rgba(18, 20, 23, 0) 41.07%
-    ),
-    #f3f3f2;
-`;
+  transition: box-shadow 200ms ease-out, background 200ms ease-out;
 
-export const Photo = styled.img`
-  height: 100%;
+  &:hover {
+    box-shadow: 0px 0px 44px 16px rgba(176, 196, 222, 0.5) inset;
+    -webkit-box-shadow: 0px 0px 44px 16px rgba(176, 196, 222, 0.5) inset;
+    -moz-box-shadow: 0px 0px 44px 16px rgba(176, 196, 222, 0.5) inset;
+  }
 
-  object-fit: cover;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 3px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #fff;
+
+  background: linear-gradient(to right, rgba(4, 4, 4, 0.4), rgba(4, 4, 4, 0.4)),
+    url(${props => props.bgImg}), url(${default_img});
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 `;

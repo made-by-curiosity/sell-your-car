@@ -2,15 +2,14 @@ import { handlePhotoLoadError } from 'utils/handlePhotoLoadError';
 import {
   ButtonWrapper,
   CarRadioLabel,
+  ContentWrapper,
   OriginalHiddenRadio,
-  Photo,
-  PhotoWrapper,
 } from './FavoriteCarBtn.styled';
 
 import default_img from 'assets/img/no_image_available.jpeg';
 
 export const FavoriteCarBtn = ({ carInfo, activeCar, setActiveCar }) => {
-  const { year, make, model, type, img = default_img, id } = carInfo;
+  const { year, make, model, img = default_img, id } = carInfo;
 
   const handleChange = e => {
     setActiveCar(carInfo);
@@ -26,20 +25,11 @@ export const FavoriteCarBtn = ({ carInfo, activeCar, setActiveCar }) => {
           checked={activeCar?.id === id}
           onChange={handleChange}
         />
-        <div>
-          <PhotoWrapper>
-            <Photo
-              src={img}
-              alt={make + '' + type}
-              onError={handlePhotoLoadError}
-            />
-          </PhotoWrapper>
-          <span>{year}</span>
+        <ContentWrapper bgImg={img} onError={handlePhotoLoadError}>
           <span>{make}</span>
           <span>{model}</span>
-          <span>{type}</span>
-          <span>{id}</span>
-        </div>
+          <span>{year}</span>
+        </ContentWrapper>
       </CarRadioLabel>
     </ButtonWrapper>
   );

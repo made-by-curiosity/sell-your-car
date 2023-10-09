@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/sell-your-car/static/css/main.7a5da214.css",
-    "main.js": "/sell-your-car/static/js/main.23b0a9df.js",
-    "static/js/288.9d7edd70.chunk.js": "/sell-your-car/static/js/288.9d7edd70.chunk.js",
+    "main.js": "/sell-your-car/static/js/main.5eeb8914.js",
+    "static/js/288.541d58aa.chunk.js": "/sell-your-car/static/js/288.541d58aa.chunk.js",
     "static/js/415.85600fbd.chunk.js": "/sell-your-car/static/js/415.85600fbd.chunk.js",
-    "static/js/588.4dc73ffc.chunk.js": "/sell-your-car/static/js/588.4dc73ffc.chunk.js",
+    "static/js/588.762f6067.chunk.js": "/sell-your-car/static/js/588.762f6067.chunk.js",
     "static/js/279.3c8efb91.chunk.js": "/sell-your-car/static/js/279.3c8efb91.chunk.js",
     "static/js/727.c434dcd9.chunk.js": "/sell-your-car/static/js/727.c434dcd9.chunk.js",
     "static/media/Montserrat-SemiBold.ttf": "/sell-your-car/static/media/Montserrat-SemiBold.93b37a465fc4ec0d0415.ttf",
@@ -18,15 +18,15 @@
     "static/media/normal.svg": "/sell-your-car/static/media/normal.7d6d70062cbaa5f87a31751fece743c7.svg",
     "static/media/x.svg": "/sell-your-car/static/media/x.179edadd79e29bae48de61492fdb52f3.svg",
     "main.7a5da214.css.map": "/sell-your-car/static/css/main.7a5da214.css.map",
-    "main.23b0a9df.js.map": "/sell-your-car/static/js/main.23b0a9df.js.map",
-    "288.9d7edd70.chunk.js.map": "/sell-your-car/static/js/288.9d7edd70.chunk.js.map",
+    "main.5eeb8914.js.map": "/sell-your-car/static/js/main.5eeb8914.js.map",
+    "288.541d58aa.chunk.js.map": "/sell-your-car/static/js/288.541d58aa.chunk.js.map",
     "415.85600fbd.chunk.js.map": "/sell-your-car/static/js/415.85600fbd.chunk.js.map",
-    "588.4dc73ffc.chunk.js.map": "/sell-your-car/static/js/588.4dc73ffc.chunk.js.map",
+    "588.762f6067.chunk.js.map": "/sell-your-car/static/js/588.762f6067.chunk.js.map",
     "279.3c8efb91.chunk.js.map": "/sell-your-car/static/js/279.3c8efb91.chunk.js.map",
     "727.c434dcd9.chunk.js.map": "/sell-your-car/static/js/727.c434dcd9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7a5da214.css",
-    "static/js/main.23b0a9df.js"
+    "static/js/main.5eeb8914.js"
   ]
 }

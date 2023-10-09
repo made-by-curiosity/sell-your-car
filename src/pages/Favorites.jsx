@@ -3,6 +3,7 @@ import { FavoriteCarBtn } from 'components/FavoriteCarBtn/FavoriteCarBtn';
 import { FavoriteCarView } from 'components/FavoriteCarView/FavoriteCarView';
 import { FavoritesSidebar } from 'components/FavoritesSidebar/FavoritesSidebar';
 import { FavoritesList } from 'components/FavoritesSidebar/FavoritesSidebar.styled';
+import { NoFavoriteMessage } from 'components/NoFavoriteMessage/NoFavoriteMessage';
 import { Section } from 'components/Section/Section';
 import { SectionWrapper } from 'components/SectionWrapper/SectionWrapper';
 import { useFavorite } from 'hooks/favoriteContext';
@@ -64,6 +65,7 @@ const Favorites = () => {
             )}
           </SectionWrapper>
         )}
+        {!favoriteCars.length && <NoFavoriteMessage />}
       </Container>
     </Section>
   );

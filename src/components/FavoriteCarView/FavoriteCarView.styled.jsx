@@ -2,20 +2,28 @@ import styled from '@emotion/styled';
 
 export const ViewContainer = styled.div`
   width: 100%;
+
   height: 100%;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
 
   gap: 20px;
+
+  @media screen and (min-width: 1440px) {
+    width: 100%;
+
+    flex-direction: row;
+  }
 `;
 
 export const ViewWrapper = styled.div`
-  width: 400px;
+  width: 100%;
 `;
 
 export const CarContainer = styled.div`
-  width: 461px;
+  width: 100%;
   height: 100%;
 
   display: flex;
@@ -76,8 +84,6 @@ export const CarMainInfo = styled.span`
 `;
 
 export const CarDescription = styled.p`
-  /* margin-bottom: 14px; */
-
   font-size: 14px;
   line-height: 1.43;
 `;
@@ -103,16 +109,9 @@ export const AdditionalInfoContainer = styled.div`
 export const AdditionalInfoWrapper = styled.p`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+
   gap: 6px;
-
-  & > span {
-    white-space: nowrap;
-  }
-
-  & > span:last-child {
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 
   & > span:not(:last-child):after {
     content: '|';
@@ -163,6 +162,7 @@ export const HighlightedValue = styled.span`
 
 export const BtnWrapper = styled.div`
   display: flex;
+  align-items: center;
 
   gap: 20px;
 `;

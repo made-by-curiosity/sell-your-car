@@ -2,6 +2,7 @@ import { Container } from 'components/Container/Container';
 import { FavoriteCarBtn } from 'components/FavoriteCarBtn/FavoriteCarBtn';
 import { FavoriteCarView } from 'components/FavoriteCarView/FavoriteCarView';
 import { FavoritesSidebar } from 'components/FavoritesSidebar/FavoritesSidebar';
+import { FavoritesList } from 'components/FavoritesSidebar/FavoritesSidebar.styled';
 import { Section } from 'components/Section/Section';
 import { SectionWrapper } from 'components/SectionWrapper/SectionWrapper';
 import { useFavorite } from 'hooks/favoriteContext';
@@ -43,7 +44,7 @@ const Favorites = () => {
         {!!favoriteCars.length && (
           <SectionWrapper>
             <FavoritesSidebar>
-              <ul>
+              <FavoritesList>
                 {filteredCars.map(car => (
                   <li key={car.id}>
                     <FavoriteCarBtn
@@ -53,7 +54,7 @@ const Favorites = () => {
                     />
                   </li>
                 ))}
-              </ul>
+              </FavoritesList>
             </FavoritesSidebar>
             {activeCar && (
               <FavoriteCarView

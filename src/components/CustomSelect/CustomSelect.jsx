@@ -9,7 +9,6 @@ import {
   SelectOptionsWrapper,
   SelectedItem,
 } from './CustomSelect.styled';
-import { carBrands } from 'utils/carBrands';
 import {
   DEFAULT_ACTIVE_OPTION,
   KEY_CODES_FOR_OPTION_SELECT,
@@ -17,12 +16,14 @@ import {
 } from 'utils/constants';
 
 import icon from 'assets/icons/chevron-down.svg';
+import { scrollOnFocus } from 'utils/scrollOnFocus';
 
-export const CustomSelect = ({ options = carBrands, name = 'car-brands' }) => {
+export const CustomSelect = ({ options = [], name }) => {
   const [isActive, setIsActive] = useState(false);
   const [activeOption, setActiveOption] = useState(DEFAULT_ACTIVE_OPTION);
 
   const selectedContainer = useRef();
+  const optionsContainer = useRef();
 
   useEffect(() => {
     if (activeOption === DEFAULT_ACTIVE_OPTION) {
@@ -38,7 +39,7 @@ export const CustomSelect = ({ options = carBrands, name = 'car-brands' }) => {
     const hasSameName = e.relatedTarget?.name === name;
 
     if (!isClickable || !isRadioInput || !hasSameName) {
-      // setIsActive(isActive => !isActive);
+      setIsActive(isActive => !isActive);
     }
   };
 
@@ -61,6 +62,13 @@ export const CustomSelect = ({ options = carBrands, name = 'car-brands' }) => {
     setIsActive(isActive => !isActive);
   };
 
+  const handleOptionFocus = e => {
+    scrollOnFocus(
+      e.target.parentElement.parentElement,
+      optionsContainer.current
+    );
+  };
+
   return (
     <SelectContainer>
       <SelectedItem
@@ -76,7 +84,7 @@ export const CustomSelect = ({ options = carBrands, name = 'car-brands' }) => {
       </Icon>
       {isActive && (
         <SelectOptionsWrapper>
-          <OptionsOverflowWrapper>
+          <OptionsOverflowWrapper ref={optionsContainer}>
             <OptionsContainer>
               {options.map((option, idx) => (
                 <li key={option}>
@@ -93,6 +101,7 @@ export const CustomSelect = ({ options = carBrands, name = 'car-brands' }) => {
                       autoFocus={option === activeOption || idx === 0}
                       onKeyDown={handleOptionKeyboardSelect}
                       onBlur={handleSelectClose}
+                      onFocus={handleOptionFocus}
                     />
                     <div>{option}</div>
                   </Option>

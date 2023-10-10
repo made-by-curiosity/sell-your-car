@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/sell-your-car/static/css/main.409d75d8.css",
-    "main.js": "/sell-your-car/static/js/main.bd816756.js",
+    "main.js": "/sell-your-car/static/js/main.2e8e3b16.js",
     "static/js/415.85600fbd.chunk.js": "/sell-your-car/static/js/415.85600fbd.chunk.js",
-    "static/js/664.eb15d891.chunk.js": "/sell-your-car/static/js/664.eb15d891.chunk.js",
+    "static/js/759.998e1e4b.chunk.js": "/sell-your-car/static/js/759.998e1e4b.chunk.js",
     "static/js/522.ac8e8bdf.chunk.js": "/sell-your-car/static/js/522.ac8e8bdf.chunk.js",
     "static/js/279.3c8efb91.chunk.js": "/sell-your-car/static/js/279.3c8efb91.chunk.js",
     "static/js/727.c434dcd9.chunk.js": "/sell-your-car/static/js/727.c434dcd9.chunk.js",
@@ -17,16 +17,17 @@
     "index.html": "/sell-your-car/index.html",
     "static/media/normal.svg": "/sell-your-car/static/media/normal.7d6d70062cbaa5f87a31751fece743c7.svg",
     "static/media/x.svg": "/sell-your-car/static/media/x.179edadd79e29bae48de61492fdb52f3.svg",
+    "static/media/chevron-down.svg": "/sell-your-car/static/media/chevron-down.2793abea629ddd781e7e1a62ceaccb62.svg",
     "main.409d75d8.css.map": "/sell-your-car/static/css/main.409d75d8.css.map",
-    "main.bd816756.js.map": "/sell-your-car/static/js/main.bd816756.js.map",
+    "main.2e8e3b16.js.map": "/sell-your-car/static/js/main.2e8e3b16.js.map",
     "415.85600fbd.chunk.js.map": "/sell-your-car/static/js/415.85600fbd.chunk.js.map",
-    "664.eb15d891.chunk.js.map": "/sell-your-car/static/js/664.eb15d891.chunk.js.map",
+    "759.998e1e4b.chunk.js.map": "/sell-your-car/static/js/759.998e1e4b.chunk.js.map",
     "522.ac8e8bdf.chunk.js.map": "/sell-your-car/static/js/522.ac8e8bdf.chunk.js.map",
     "279.3c8efb91.chunk.js.map": "/sell-your-car/static/js/279.3c8efb91.chunk.js.map",
     "727.c434dcd9.chunk.js.map": "/sell-your-car/static/js/727.c434dcd9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.409d75d8.css",
-    "static/js/main.bd816756.js"
+    "static/js/main.2e8e3b16.js"
   ]
 }

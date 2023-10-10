@@ -116,5 +116,11 @@ export const Icon = styled.svg`
   top: 14px;
   right: 14px;
 
+  cursor: pointer;
+
   ${props => (props.isActive ? 'transform: rotate(180deg);' : '')}
+`;
+
+export const SelectedItemWrapper = styled.div`
+  position: relative;
 `;

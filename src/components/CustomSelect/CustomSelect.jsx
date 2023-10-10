@@ -8,6 +8,7 @@ import {
   SelectContainer,
   SelectOptionsWrapper,
   SelectedItem,
+  SelectedItemWrapper,
 } from './CustomSelect.styled';
 import {
   DEFAULT_ACTIVE_OPTION,
@@ -18,20 +19,28 @@ import {
 import icon from 'assets/icons/chevron-down.svg';
 import { scrollOnFocus } from 'utils/scrollOnFocus';
 
-export const CustomSelect = ({ options = [], name }) => {
+export const CustomSelect = ({
+  options = [],
+  name,
+  defaultText = DEFAULT_ACTIVE_OPTION,
+}) => {
   const [isActive, setIsActive] = useState(false);
-  const [activeOption, setActiveOption] = useState(DEFAULT_ACTIVE_OPTION);
+  const [activeOption, setActiveOption] = useState(defaultText);
 
   const selectedContainer = useRef();
   const optionsContainer = useRef();
 
   useEffect(() => {
-    if (activeOption === DEFAULT_ACTIVE_OPTION) {
+    if (activeOption === defaultText) {
       return;
     }
 
     selectedContainer.current.focus();
-  }, [activeOption]);
+  }, [activeOption, defaultText]);
+
+  const toggleOptionsContainer = () => {
+    setIsActive(isActive => !isActive);
+  };
 
   const handleSelectClose = e => {
     const isClickable = e.relatedTarget !== null;
@@ -39,27 +48,28 @@ export const CustomSelect = ({ options = [], name }) => {
     const hasSameName = e.relatedTarget?.name === name;
 
     if (!isClickable || !isRadioInput || !hasSameName) {
-      setIsActive(isActive => !isActive);
+      toggleOptionsContainer();
     }
   };
 
   const handleSelectClick = e => {
     if (KEY_CODES_FOR_SELECT_OPEN.includes(e.code) || e.type === 'mousedown') {
       e.preventDefault();
-      setIsActive(isActive => !isActive);
+      toggleOptionsContainer();
     }
   };
 
   const handleOptionKeyboardSelect = e => {
     if (KEY_CODES_FOR_OPTION_SELECT.includes(e.code)) {
+      e.preventDefault();
       setActiveOption(e.target.value);
-      setIsActive(isActive => !isActive);
+      toggleOptionsContainer();
     }
   };
 
   const handleOptionMouseSelect = e => {
     setActiveOption(e.target.innerText);
-    setIsActive(isActive => !isActive);
+    toggleOptionsContainer();
   };
 
   const handleOptionFocus = e => {
@@ -71,17 +81,18 @@ export const CustomSelect = ({ options = [], name }) => {
 
   return (
     <SelectContainer>
-      <SelectedItem
-        type="text"
-        value={activeOption}
-        readOnly
-        ref={selectedContainer}
-        onKeyDown={handleSelectClick}
-        onMouseDown={handleSelectClick}
-      />
-      <Icon isActive={isActive}>
-        <use href={`${icon}#chevron`} />
-      </Icon>
+      <SelectedItemWrapper onMouseDown={handleSelectClick}>
+        <SelectedItem
+          type="text"
+          value={activeOption}
+          readOnly
+          ref={selectedContainer}
+          onKeyDown={handleSelectClick}
+        />
+        <Icon isActive={isActive}>
+          <use href={`${icon}#chevron`} />
+        </Icon>
+      </SelectedItemWrapper>
       {isActive && (
         <SelectOptionsWrapper>
           <OptionsOverflowWrapper ref={optionsContainer}>
@@ -95,10 +106,14 @@ export const CustomSelect = ({ options = [], name }) => {
                     <OriginalRadioInput
                       type="radio"
                       name={name}
-                      value={option}
+                      value={option.toString()}
                       id={option}
-                      defaultChecked={option === activeOption || idx === 0}
-                      autoFocus={option === activeOption || idx === 0}
+                      defaultChecked={
+                        option.toString() === activeOption || idx === 0
+                      }
+                      autoFocus={
+                        option.toString() === activeOption || idx === 0
+                      }
                       onKeyDown={handleOptionKeyboardSelect}
                       onBlur={handleSelectClose}
                       onFocus={handleOptionFocus}

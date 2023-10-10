@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import {
+  Option,
   OptionsContainer,
+  OptionsOverflowWrapper,
+  OriginalRadioInput,
   SelectContainer,
   SelectOptionsWrapper,
   SelectedItem,
@@ -57,7 +60,6 @@ export const CustomSelect = ({ options = carBrands, name = 'car-brands' }) => {
 
   return (
     <SelectContainer>
-      {/* <SelectedItem> */}
       <SelectedItem
         type="text"
         value={activeOption}
@@ -66,28 +68,32 @@ export const CustomSelect = ({ options = carBrands, name = 'car-brands' }) => {
         onKeyDown={handleSelectClick}
         onMouseDown={handleSelectClick}
       />
-      {/* </SelectedItem> */}
       {isActive && (
         <SelectOptionsWrapper>
-          <OptionsContainer>
-            {options.map((option, idx) => (
-              <li key={option}>
-                <label htmlFor={option} onMouseDown={handleOptionMouseSelect}>
-                  <input
-                    type="radio"
-                    name={name}
-                    value={option}
-                    id={option}
-                    defaultChecked={option === activeOption || idx === 0}
-                    autoFocus={option === activeOption || idx === 0}
-                    onKeyDown={handleOptionKeyboardSelect}
-                    onBlur={handleSelectClose}
-                  />
-                  <span>{option}</span>
-                </label>
-              </li>
-            ))}
-          </OptionsContainer>
+          <OptionsOverflowWrapper>
+            <OptionsContainer>
+              {options.map((option, idx) => (
+                <li key={option}>
+                  <Option
+                    htmlFor={option}
+                    onMouseDown={handleOptionMouseSelect}
+                  >
+                    <OriginalRadioInput
+                      type="radio"
+                      name={name}
+                      value={option}
+                      id={option}
+                      defaultChecked={option === activeOption || idx === 0}
+                      autoFocus={option === activeOption || idx === 0}
+                      onKeyDown={handleOptionKeyboardSelect}
+                      onBlur={handleSelectClose}
+                    />
+                    <div>{option}</div>
+                  </Option>
+                </li>
+              ))}
+            </OptionsContainer>
+          </OptionsOverflowWrapper>
         </SelectOptionsWrapper>
       )}
     </SelectContainer>

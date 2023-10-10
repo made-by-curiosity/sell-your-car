@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import {
+  Icon,
   Option,
   OptionsContainer,
   OptionsOverflowWrapper,
@@ -14,6 +15,8 @@ import {
   KEY_CODES_FOR_OPTION_SELECT,
   KEY_CODES_FOR_SELECT_OPEN,
 } from 'utils/constants';
+
+import icon from 'assets/icons/chevron-down.svg';
 
 export const CustomSelect = ({ options = carBrands, name = 'car-brands' }) => {
   const [isActive, setIsActive] = useState(false);
@@ -35,7 +38,7 @@ export const CustomSelect = ({ options = carBrands, name = 'car-brands' }) => {
     const hasSameName = e.relatedTarget?.name === name;
 
     if (!isClickable || !isRadioInput || !hasSameName) {
-      setIsActive(isActive => !isActive);
+      // setIsActive(isActive => !isActive);
     }
   };
 
@@ -68,6 +71,9 @@ export const CustomSelect = ({ options = carBrands, name = 'car-brands' }) => {
         onKeyDown={handleSelectClick}
         onMouseDown={handleSelectClick}
       />
+      <Icon isActive={isActive}>
+        <use href={`${icon}#chevron`} />
+      </Icon>
       {isActive && (
         <SelectOptionsWrapper>
           <OptionsOverflowWrapper>

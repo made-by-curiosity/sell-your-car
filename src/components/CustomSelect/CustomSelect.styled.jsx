@@ -106,3 +106,15 @@ export const OriginalRadioInput = styled.input`
     color: #121417;
   }
 `;
+
+export const Icon = styled.svg`
+  width: 20px;
+  height: 20px;
+  stroke: #121417;
+
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  ${props => (props.isActive ? 'transform: rotate(180deg);' : '')}
+`;

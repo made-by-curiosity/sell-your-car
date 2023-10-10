@@ -3,15 +3,12 @@ import styled from '@emotion/styled';
 export const Button = styled.button`
   width: ${props => (props.fullWidth ? '100%' : 'max-content')};
   height: ${props => (props.fullHeight ? '100%' : 'max-content')};
-  padding: 12px 50px;
+  padding: 12px;
 
   color: #fff;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.43;
-  overflow: hidden;
-  text-wrap: nowrap;
-  text-overflow: ellipsis;
 
   background-color: #3470ff;
 

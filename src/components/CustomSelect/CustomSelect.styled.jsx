@@ -38,7 +38,7 @@ export const SelectOptionsWrapper = styled.div`
   position: absolute;
   top: 54px;
   left: 0;
-  z-index: 100;
+  z-index: 200;
 
   border-radius: 14px;
   border: 1px solid rgba(18, 20, 23, 0.05);

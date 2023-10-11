@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 
 export const MainSection = styled.section`
   height: 100%;
-  padding: 20px 0 50px;
+  padding: 120px 0 50px;
 
   @media screen and (min-width: 768px) {
-    padding: 40px 0 60px;
+    padding: 140px 0 60px;
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 100px 0;
+    padding: 200px 0;
   }
 `;

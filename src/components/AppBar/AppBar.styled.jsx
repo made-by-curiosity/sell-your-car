@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 
 export const PageHeader = styled.header`
   padding: 20px 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+
   background-color: rgba(0, 0, 0, 0.9);
 `;
 

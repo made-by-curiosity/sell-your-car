@@ -8,8 +8,10 @@ import { Section } from 'components/Section/Section';
 import { CarInfoModal } from 'components/CarInfoModal/CarInfoModal';
 import { Filter } from 'components/Filter/Filter';
 
-import { getAllCarsPerPage } from 'services/sellCarsApi';
-import { PAGE, PER_PAGE } from 'utils/constants';
+import { getAllCars, getAllCarsPerPage } from 'services/sellCarsApi';
+import { DEFAULT_CAR_BRANDS_OPTION, PAGE, PER_PAGE } from 'utils/constants';
+import { normalizeRentalPrice } from 'utils/normalizeRentalPrice';
+import { smoothScrollOnLoadMore } from 'utils/scrollOnLoadMore';
 
 const Catalog = () => {
   const [allCars, setAllCars] = useState([]);
@@ -18,6 +20,12 @@ const Catalog = () => {
   const [isLoadingMoreCars, setIsLoadingMoreCars] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentCar, setCurrentCar] = useState(null);
+  const [activeBrandFilter, setActiveBrandFilter] = useState(
+    DEFAULT_CAR_BRANDS_OPTION
+  );
+  const [activePriceFilter, setActivePriceFilter] = useState('');
+  const [filteredCars, setFilteredCars] = useState([]);
+
   const carsCardRef = useRef();
 
   useEffect(() => {
@@ -45,10 +53,27 @@ const Catalog = () => {
   }, [page]);
 
   useEffect(() => {
+    (async () => {
+      const cars = await getAllCars();
+
+      const carsToShow = cars.filter(
+        car =>
+          car.make.toLowerCase() === activeBrandFilter.toLowerCase() &&
+          normalizeRentalPrice(car.rentalPrice) <= activePriceFilter
+      );
+      setFilteredCars(carsToShow);
+    })();
+  }, [activeBrandFilter, activePriceFilter, allCars]);
+
+  useEffect(() => {
+    console.log(filteredCars);
+  }, [filteredCars]);
+
+  useEffect(() => {
     if (allCars.length <= PER_PAGE) {
       return;
     }
-    smoothScrollOnLoadMore();
+    smoothScrollOnLoadMore(carsCardRef.current);
   }, [allCars]);
 
   const handlePageChange = () => {
@@ -59,15 +84,6 @@ const Catalog = () => {
     setIsModalOpen(isOpen => !isOpen);
   };
 
-  function smoothScrollOnLoadMore() {
-    const { height: cardHeight } =
-      carsCardRef.current.firstElementChild.getBoundingClientRect();
-    window.scrollBy({
-      top: cardHeight,
-      behavior: 'smooth',
-    });
-  }
-
   return (
     <>
       {isModalOpen && (
@@ -75,7 +91,12 @@ const Catalog = () => {
       )}
       <Section>
         <Container>
-          <Filter />
+          <Filter
+            activeBrandFilter={activeBrandFilter}
+            setActiveBrandFilter={setActiveBrandFilter}
+            activePriceFilter={activePriceFilter}
+            setActivePriceFilter={setActivePriceFilter}
+          />
 
           <CardsGrid>
             {allCars.map(car => (

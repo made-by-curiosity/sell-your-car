@@ -23,9 +23,10 @@ export const CustomSelect = ({
   options = [],
   name,
   defaultText = DEFAULT_ACTIVE_OPTION,
+  activeOption,
+  setActiveOption,
 }) => {
   const [isActive, setIsActive] = useState(false);
-  const [activeOption, setActiveOption] = useState(defaultText);
 
   const selectedContainer = useRef();
   const optionsContainer = useRef();

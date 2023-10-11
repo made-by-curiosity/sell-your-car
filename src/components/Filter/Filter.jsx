@@ -10,7 +10,12 @@ import { carBrands } from 'utils/carBrands';
 import { getPricesByStep } from 'utils/getPricesByStep';
 import { DEFAULT_CAR_BRANDS_OPTION } from 'utils/constants';
 
-export const Filter = () => {
+export const Filter = ({
+  activeBrandFilter,
+  activePriceFilter,
+  setActiveBrandFilter,
+  setActivePriceFilter,
+}) => {
   const [allPrices, setAllPrices] = useState([]);
 
   useEffect(() => {
@@ -34,8 +39,16 @@ export const Filter = () => {
         options={carBrands}
         name="car-brands"
         defaultText={DEFAULT_CAR_BRANDS_OPTION}
+        activeOption={activeBrandFilter}
+        setActiveOption={setActiveBrandFilter}
       />
-      <CustomSelect options={allPrices} name="price" defaultText={''} />
+      <CustomSelect
+        options={allPrices}
+        name="price"
+        defaultText={''}
+        activeOption={activePriceFilter}
+        setActiveOption={setActivePriceFilter}
+      />
 
       <MainButton
         text="Search"

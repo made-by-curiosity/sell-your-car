@@ -25,7 +25,7 @@ export const StyledNavLink = styled(NavLink)`
 
   &.active {
     border: 1px solid #3470ff;
-    color: orange;
+    color: #ffd223;
   }
 
   @media screen and (min-width: 768px) {

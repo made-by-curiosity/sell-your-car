@@ -1,19 +1,19 @@
 import { Container } from 'components/Container/Container';
+import { PhotoSection } from 'components/PhotoSection/PhotoSection';
 import { MainPageSection } from 'components/MainPageSection/MainPageSection';
 import { PhotoBg } from 'components/PhotoBg/PhotoBg';
-import { Link } from 'react-router-dom';
+import { RentLinkBtn } from 'components/RentLinkBtn/RentLinkBtn';
+import { Hero } from 'components/Hero/Hero';
 
 const Home = () => {
   return (
     <>
       <PhotoBg type="hero">
-        <MainPageSection>
+        <PhotoSection>
           <Container>
-            <h1>Ukrainian #1 Car Rental</h1>
-            <p>Rent your dream car on daily or hourly basis.</p>
-            <Link to="/catalog">Rent now</Link>
+            <Hero />
           </Container>
-        </MainPageSection>
+        </PhotoSection>
       </PhotoBg>
       <MainPageSection>
         <Container>
@@ -39,14 +39,14 @@ const Home = () => {
         </Container>
       </MainPageSection>
       <PhotoBg type="discount">
-        <MainPageSection>
+        <PhotoSection>
           <Container>
             <p>DRIVEN BY LUXURY</p>
             <p>GET 80% OFF ALL CARS</p>
             <p>Enjoy seasonal discounts for a limited time only.</p>
-            <Link to="/catalog">Rent now</Link>
+            <RentLinkBtn />
           </Container>
-        </MainPageSection>
+        </PhotoSection>
       </PhotoBg>
       <MainPageSection>
         <Container>

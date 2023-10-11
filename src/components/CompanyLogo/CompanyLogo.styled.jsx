@@ -4,7 +4,7 @@ export const LogoSvg = styled.svg`
   width: 40px;
   height: 40px;
 
-  fill: orange;
+  fill: #ffd223;
 `;
 
 export const LogoWrapper = styled.div`

@@ -1,12 +1,18 @@
 {
   "files": {
     "main.css": "/sell-your-car/static/css/main.409d75d8.css",
-    "main.js": "/sell-your-car/static/js/main.09dd4568.js",
-    "static/js/415.85600fbd.chunk.js": "/sell-your-car/static/js/415.85600fbd.chunk.js",
-    "static/js/395.480cbb73.chunk.js": "/sell-your-car/static/js/395.480cbb73.chunk.js",
-    "static/js/522.68fe1843.chunk.js": "/sell-your-car/static/js/522.68fe1843.chunk.js",
+    "main.js": "/sell-your-car/static/js/main.00d86046.js",
+    "static/js/710.1fda7b42.chunk.js": "/sell-your-car/static/js/710.1fda7b42.chunk.js",
+    "static/js/805.7f127466.chunk.js": "/sell-your-car/static/js/805.7f127466.chunk.js",
+    "static/js/522.74e3faeb.chunk.js": "/sell-your-car/static/js/522.74e3faeb.chunk.js",
     "static/js/279.3c8efb91.chunk.js": "/sell-your-car/static/js/279.3c8efb91.chunk.js",
     "static/js/727.c434dcd9.chunk.js": "/sell-your-car/static/js/727.c434dcd9.chunk.js",
+    "static/media/bg_car_8.jpg": "/sell-your-car/static/media/bg_car_8.217b5da411487387a001.jpg",
+    "static/media/bg_car_1.jpg": "/sell-your-car/static/media/bg_car_1.0253ec3ad949875d7728.jpg",
+    "static/media/bg_car_6.jpg": "/sell-your-car/static/media/bg_car_6.3afca8d44e724eacd81e.jpg",
+    "static/media/bg_car_2.jpg": "/sell-your-car/static/media/bg_car_2.abf196477402e3b9fa54.jpg",
+    "static/media/bg_car_7.jpg": "/sell-your-car/static/media/bg_car_7.e84195d19df054d62d33.jpg",
+    "static/media/bg_car_4.jpg": "/sell-your-car/static/media/bg_car_4.14464cc39a94408537a0.jpg",
     "static/media/Montserrat-SemiBold.ttf": "/sell-your-car/static/media/Montserrat-SemiBold.93b37a465fc4ec0d0415.ttf",
     "static/media/Montserrat-Regular.ttf": "/sell-your-car/static/media/Montserrat-Regular.24785cc015b27a3e964b.ttf",
     "static/media/Manrope-SemiBold.ttf": "/sell-your-car/static/media/Manrope-SemiBold.310f108cc524df0e5ffc.ttf",
@@ -19,15 +25,15 @@
     "static/media/x.svg": "/sell-your-car/static/media/x.179edadd79e29bae48de61492fdb52f3.svg",
     "static/media/chevron-down.svg": "/sell-your-car/static/media/chevron-down.2793abea629ddd781e7e1a62ceaccb62.svg",
     "main.409d75d8.css.map": "/sell-your-car/static/css/main.409d75d8.css.map",
-    "main.09dd4568.js.map": "/sell-your-car/static/js/main.09dd4568.js.map",
-    "415.85600fbd.chunk.js.map": "/sell-your-car/static/js/415.85600fbd.chunk.js.map",
-    "395.480cbb73.chunk.js.map": "/sell-your-car/static/js/395.480cbb73.chunk.js.map",
-    "522.68fe1843.chunk.js.map": "/sell-your-car/static/js/522.68fe1843.chunk.js.map",
+    "main.00d86046.js.map": "/sell-your-car/static/js/main.00d86046.js.map",
+    "710.1fda7b42.chunk.js.map": "/sell-your-car/static/js/710.1fda7b42.chunk.js.map",
+    "805.7f127466.chunk.js.map": "/sell-your-car/static/js/805.7f127466.chunk.js.map",
+    "522.74e3faeb.chunk.js.map": "/sell-your-car/static/js/522.74e3faeb.chunk.js.map",
     "279.3c8efb91.chunk.js.map": "/sell-your-car/static/js/279.3c8efb91.chunk.js.map",
     "727.c434dcd9.chunk.js.map": "/sell-your-car/static/js/727.c434dcd9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.409d75d8.css",
-    "static/js/main.09dd4568.js"
+    "static/js/main.00d86046.js"
   ]
 }

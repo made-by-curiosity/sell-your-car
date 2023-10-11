@@ -15,6 +15,7 @@ export const ViewContainer = styled.div`
     width: 100%;
 
     flex-direction: row;
+    align-items: center;
   }
 `;
 
@@ -28,6 +29,7 @@ export const CarContainer = styled.div`
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   overflow: hidden;
 `;

@@ -10,4 +10,10 @@ export const Wrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
   }
+
+  @media screen and (min-width: 1440px) {
+    height: 100%;
+
+    align-items: center;
+  }
 `;

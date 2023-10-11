@@ -15,13 +15,18 @@ export const CarContainer = styled.div`
 `;
 
 export const PhotoContainer = styled.div`
-  height: 248px;
+  height: 200px;
   border-radius: 14px;
   overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    height: 248px;
+  }
 `;
 
 export const PhotoWrapper = styled.div`
-  height: 248px;
+  height: 200px;
+
   margin-bottom: 14px;
 
   border-radius: 14px;
@@ -32,6 +37,10 @@ export const PhotoWrapper = styled.div`
       rgba(18, 20, 23, 0) 41.07%
     ),
     #f3f3f2;
+
+  @media screen and (min-width: 768px) {
+    height: 248px;
+  }
 `;
 
 export const Photo = styled.img`

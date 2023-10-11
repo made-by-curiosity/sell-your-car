@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const SelectContainer = styled.div`
-  width: 224px;
+  width: ${props => (props.width ? `${props.width}px` : '224px')};
 
   position: relative;
 

@@ -25,6 +25,7 @@ export const CustomSelect = ({
   defaultText = DEFAULT_ACTIVE_OPTION,
   activeOption,
   setActiveOption,
+  width,
 }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -81,7 +82,7 @@ export const CustomSelect = ({
   };
 
   return (
-    <SelectContainer>
+    <SelectContainer width={width}>
       <SelectedItemWrapper onMouseDown={handleSelectClick}>
         <SelectedItem
           type="text"

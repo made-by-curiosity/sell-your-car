@@ -13,3 +13,5 @@ export const KEY_CODES_FOR_OPTION_SELECT = ['Enter', 'Space'];
 
 export const DEFAULT_ACTIVE_OPTION = '-Select-';
 export const DEFAULT_CAR_BRANDS_OPTION = 'Choose car brand';
+
+export const numbersCharCodes = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57];

@@ -80,6 +80,7 @@ export const Filter = ({ setFilteredCars }) => {
         defaultText={''}
         activeOption={activePriceFilter}
         setActiveOption={setActivePriceFilter}
+        width={125}
       />
       <MileageWrapper>
         <FromInput mileageFrom={mileageFrom} setMileageFrom={setMileageFrom} />

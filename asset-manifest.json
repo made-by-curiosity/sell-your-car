@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sell-your-car/static/css/main.409d75d8.css",
-    "main.js": "/sell-your-car/static/js/main.7cd1b443.js",
-    "static/js/329.be07ddb1.chunk.js": "/sell-your-car/static/js/329.be07ddb1.chunk.js",
+    "main.js": "/sell-your-car/static/js/main.69e602c5.js",
+    "static/js/329.fd749d43.chunk.js": "/sell-your-car/static/js/329.fd749d43.chunk.js",
     "static/js/805.7f127466.chunk.js": "/sell-your-car/static/js/805.7f127466.chunk.js",
     "static/js/522.74e3faeb.chunk.js": "/sell-your-car/static/js/522.74e3faeb.chunk.js",
     "static/js/279.3c8efb91.chunk.js": "/sell-your-car/static/js/279.3c8efb91.chunk.js",
@@ -25,8 +25,8 @@
     "static/media/x.svg": "/sell-your-car/static/media/x.179edadd79e29bae48de61492fdb52f3.svg",
     "static/media/chevron-down.svg": "/sell-your-car/static/media/chevron-down.2793abea629ddd781e7e1a62ceaccb62.svg",
     "main.409d75d8.css.map": "/sell-your-car/static/css/main.409d75d8.css.map",
-    "main.7cd1b443.js.map": "/sell-your-car/static/js/main.7cd1b443.js.map",
-    "329.be07ddb1.chunk.js.map": "/sell-your-car/static/js/329.be07ddb1.chunk.js.map",
+    "main.69e602c5.js.map": "/sell-your-car/static/js/main.69e602c5.js.map",
+    "329.fd749d43.chunk.js.map": "/sell-your-car/static/js/329.fd749d43.chunk.js.map",
     "805.7f127466.chunk.js.map": "/sell-your-car/static/js/805.7f127466.chunk.js.map",
     "522.74e3faeb.chunk.js.map": "/sell-your-car/static/js/522.74e3faeb.chunk.js.map",
     "279.3c8efb91.chunk.js.map": "/sell-your-car/static/js/279.3c8efb91.chunk.js.map",
@@ -34,6 +34,6 @@
   },
   "entrypoints": [
     "static/css/main.409d75d8.css",
-    "static/js/main.7cd1b443.js"
+    "static/js/main.69e602c5.js"
   ]
 }

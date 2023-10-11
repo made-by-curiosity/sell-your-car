@@ -106,6 +106,7 @@ export const Filter = ({ setFilteredCars }) => {
           width={125}
           contentStyles={{ paddingLeft: '43px' }}
           label="To"
+          currency="$"
         />
       </FilterItemWrapper>
       <FilterItemWrapper>

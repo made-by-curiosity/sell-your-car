@@ -29,6 +29,7 @@ export const CustomSelect = ({
   width,
   contentStyles = {},
   label,
+  currency = '',
 }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -90,7 +91,9 @@ export const CustomSelect = ({
         {label && <PriceLabel>{label}</PriceLabel>}
         <SelectedItem
           type="text"
-          value={!!activeOption ? activeOption : defaultText}
+          value={
+            !!activeOption ? activeOption + currency : defaultText + currency
+          }
           readOnly
           ref={selectedContainer}
           onKeyDown={handleSelectClick}

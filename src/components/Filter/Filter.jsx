@@ -37,34 +37,30 @@ export const Filter = ({ setFilteredCars }) => {
   }, []);
 
   const handleSearchFilter = async () => {
-    console.log('activeBrandFilter', activeBrandFilter);
-    console.log('activePriceFilter', activePriceFilter);
-    console.log('mileageFrom', normalizeMilage(mileageFrom));
-    console.log('mileageTo', normalizeMilage(mileageTo));
+    const filterValues = {
+      brandFilter: !!activeBrandFilter,
+      priceFilter: !!activePriceFilter,
+      mileageFromFilter: !!mileageFrom,
+      mileageToFilter: !!mileageTo,
+    };
+
+    const filterKeys = Object.keys(filterValues);
+
+    const selectedFilters = filterKeys.filter(key => filterValues[key]);
+
+    const filtersConditions = {
+      brandFilter: car =>
+        car.make.toLowerCase() === activeBrandFilter.toLowerCase(),
+      priceFilter: car =>
+        normalizeRentalPrice(car.rentalPrice) <= activePriceFilter,
+      mileageFromFilter: car => car.mileage >= normalizeMilage(mileageFrom),
+      mileageToFilter: car => car.mileage <= normalizeMilage(mileageTo),
+    };
 
     const cars = await getAllCars();
 
     const carsToShow = cars.filter(car => {
-      // if (!mileageFrom) {
-      // 	return
-      // }
-
-      // if (!mileageTo) {
-      //   return;
-      // }
-
-      if (!activePriceFilter) {
-        return car.make.toLowerCase() === activeBrandFilter.toLowerCase();
-      }
-
-      if (!activeBrandFilter) {
-        return normalizeRentalPrice(car.rentalPrice) <= activePriceFilter;
-      }
-
-      return (
-        car.make.toLowerCase() === activeBrandFilter.toLowerCase() &&
-        normalizeRentalPrice(car.rentalPrice) <= activePriceFilter
-      );
+      return selectedFilters.every(filter => filtersConditions[filter](car));
     });
 
     setFilteredCars(carsToShow);

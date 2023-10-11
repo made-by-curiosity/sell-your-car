@@ -19,8 +19,6 @@ const Catalog = () => {
   const [isLoadingMoreCars, setIsLoadingMoreCars] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentCar, setCurrentCar] = useState(null);
-  const [activeBrandFilter, setActiveBrandFilter] = useState('');
-  const [activePriceFilter, setActivePriceFilter] = useState('');
   const [filteredCars, setFilteredCars] = useState(null);
 
   const carsCardRef = useRef();
@@ -28,6 +26,8 @@ const Catalog = () => {
   useEffect(() => {
     if (filteredCars) {
       setIsLoadMoreShown(false);
+      setAllCars([]);
+      setPage(PAGE);
       return;
     }
 
@@ -56,10 +56,6 @@ const Catalog = () => {
   }, [filteredCars, page]);
 
   useEffect(() => {
-    console.log(filteredCars);
-  }, [filteredCars]);
-
-  useEffect(() => {
     if (allCars.length <= PER_PAGE) {
       return;
     }
@@ -74,13 +70,6 @@ const Catalog = () => {
     setIsModalOpen(isOpen => !isOpen);
   };
 
-  const resetFiltersSearch = () => {
-    setPage(PAGE);
-    setActiveBrandFilter('');
-    setActivePriceFilter('');
-    setFilteredCars(null);
-  };
-
   const carsToShow = !!filteredCars ? filteredCars : allCars;
 
   return (
@@ -90,15 +79,7 @@ const Catalog = () => {
       )}
       <Section>
         <Container>
-          <Filter
-            activeBrandFilter={activeBrandFilter}
-            setActiveBrandFilter={setActiveBrandFilter}
-            activePriceFilter={activePriceFilter}
-            setActivePriceFilter={setActivePriceFilter}
-            setFilteredCars={setFilteredCars}
-            setAllCars={setAllCars}
-            resetFiltersSearch={resetFiltersSearch}
-          />
+          <Filter setFilteredCars={setFilteredCars} />
 
           <CardsGrid>
             {carsToShow.map(car => (

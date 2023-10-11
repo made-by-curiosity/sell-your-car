@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { MainButton } from 'components/MainButton/MainButton';
 import { CustomSelect } from 'components/CustomSelect/CustomSelect';
 
-import { FilterContainer } from './Filter.styled';
+import { FilterContainer, MileageWrapper } from './Filter.styled';
 
 import { getAllCars } from 'services/sellCarsApi';
 import { carBrands } from 'utils/carBrands';
@@ -11,17 +11,15 @@ import { getPricesByStep } from 'utils/getPricesByStep';
 import { DEFAULT_CAR_BRANDS_OPTION } from 'utils/constants';
 import { normalizeRentalPrice } from 'utils/normalizeRentalPrice';
 import { SecondaryButton } from 'components/SecondaryButton/SecondaryButton';
+import { FromInput } from 'components/FromInput/FromInput';
+import { ToInput } from 'components/ToInput/ToInput';
 
-export const Filter = ({
-  activeBrandFilter,
-  activePriceFilter,
-  setActiveBrandFilter,
-  setActivePriceFilter,
-  setFilteredCars,
-  setAllCars,
-  resetFiltersSearch,
-}) => {
+export const Filter = ({ setFilteredCars }) => {
   const [allPrices, setAllPrices] = useState([]);
+  const [activeBrandFilter, setActiveBrandFilter] = useState('');
+  const [activePriceFilter, setActivePriceFilter] = useState('');
+  const [mileageFrom, setMileageFrom] = useState('');
+  const [mileageTo, setMileageTo] = useState('');
 
   useEffect(() => {
     (async () => {
@@ -58,8 +56,13 @@ export const Filter = ({
       );
     });
 
-    setAllCars([]);
     setFilteredCars(carsToShow);
+  };
+
+  const resetFiltersSearch = () => {
+    setActiveBrandFilter('');
+    setActivePriceFilter('');
+    setFilteredCars(null);
   };
 
   return (
@@ -78,7 +81,10 @@ export const Filter = ({
         activeOption={activePriceFilter}
         setActiveOption={setActivePriceFilter}
       />
-
+      <MileageWrapper>
+        <FromInput mileageFrom={mileageFrom} setMileageFrom={setMileageFrom} />
+        <ToInput mileageTo={mileageTo} setMileageTo={setMileageTo} />
+      </MileageWrapper>
       <MainButton
         text="Search"
         type="submit"

@@ -32,7 +32,7 @@ export const CustomSelect = ({
   const optionsContainer = useRef();
 
   useEffect(() => {
-    if (activeOption === defaultText) {
+    if (activeOption === '') {
       return;
     }
 
@@ -85,7 +85,7 @@ export const CustomSelect = ({
       <SelectedItemWrapper onMouseDown={handleSelectClick}>
         <SelectedItem
           type="text"
-          value={activeOption}
+          value={!!activeOption ? activeOption : defaultText}
           readOnly
           ref={selectedContainer}
           onKeyDown={handleSelectClick}

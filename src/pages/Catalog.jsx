@@ -8,9 +8,8 @@ import { Section } from 'components/Section/Section';
 import { CarInfoModal } from 'components/CarInfoModal/CarInfoModal';
 import { Filter } from 'components/Filter/Filter';
 
-import { getAllCars, getAllCarsPerPage } from 'services/sellCarsApi';
-import { DEFAULT_CAR_BRANDS_OPTION, PAGE, PER_PAGE } from 'utils/constants';
-import { normalizeRentalPrice } from 'utils/normalizeRentalPrice';
+import { getAllCarsPerPage } from 'services/sellCarsApi';
+import { PAGE, PER_PAGE } from 'utils/constants';
 import { smoothScrollOnLoadMore } from 'utils/scrollOnLoadMore';
 
 const Catalog = () => {
@@ -20,17 +19,21 @@ const Catalog = () => {
   const [isLoadingMoreCars, setIsLoadingMoreCars] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentCar, setCurrentCar] = useState(null);
-  const [activeBrandFilter, setActiveBrandFilter] = useState(
-    DEFAULT_CAR_BRANDS_OPTION
-  );
+  const [activeBrandFilter, setActiveBrandFilter] = useState('');
   const [activePriceFilter, setActivePriceFilter] = useState('');
-  const [filteredCars, setFilteredCars] = useState([]);
+  const [filteredCars, setFilteredCars] = useState(null);
 
   const carsCardRef = useRef();
 
   useEffect(() => {
+    if (filteredCars) {
+      setIsLoadMoreShown(false);
+      return;
+    }
+
     (async () => {
       try {
+        setIsLoadMoreShown(true);
         setIsLoadingMoreCars(true);
         const cars = await getAllCarsPerPage(page);
         setIsLoadingMoreCars(false);
@@ -50,20 +53,7 @@ const Catalog = () => {
         console.log(error);
       }
     })();
-  }, [page]);
-
-  useEffect(() => {
-    (async () => {
-      const cars = await getAllCars();
-
-      const carsToShow = cars.filter(
-        car =>
-          car.make.toLowerCase() === activeBrandFilter.toLowerCase() &&
-          normalizeRentalPrice(car.rentalPrice) <= activePriceFilter
-      );
-      setFilteredCars(carsToShow);
-    })();
-  }, [activeBrandFilter, activePriceFilter, allCars]);
+  }, [filteredCars, page]);
 
   useEffect(() => {
     console.log(filteredCars);
@@ -84,6 +74,15 @@ const Catalog = () => {
     setIsModalOpen(isOpen => !isOpen);
   };
 
+  const resetFiltersSearch = () => {
+    setPage(PAGE);
+    setActiveBrandFilter('');
+    setActivePriceFilter('');
+    setFilteredCars(null);
+  };
+
+  const carsToShow = !!filteredCars ? filteredCars : allCars;
+
   return (
     <>
       {isModalOpen && (
@@ -96,10 +95,13 @@ const Catalog = () => {
             setActiveBrandFilter={setActiveBrandFilter}
             activePriceFilter={activePriceFilter}
             setActivePriceFilter={setActivePriceFilter}
+            setFilteredCars={setFilteredCars}
+            setAllCars={setAllCars}
+            resetFiltersSearch={resetFiltersSearch}
           />
 
           <CardsGrid>
-            {allCars.map(car => (
+            {carsToShow.map(car => (
               <li key={car.id}>
                 <CarCard
                   carInfo={car}

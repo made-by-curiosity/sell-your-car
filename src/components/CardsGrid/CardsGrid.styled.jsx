@@ -17,7 +17,10 @@ export const Grid = styled.ul`
   }
 
   @media screen and (min-width: 1440px) {
-    width: 1200px;
+    width: 1184px;
+
+    justify-content: flex-start;
+    column-gap: 29px;
 
     margin-bottom: 100px;
   }

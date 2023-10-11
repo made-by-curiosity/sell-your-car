@@ -9,12 +9,17 @@ import { getAllCars } from 'services/sellCarsApi';
 import { carBrands } from 'utils/carBrands';
 import { getPricesByStep } from 'utils/getPricesByStep';
 import { DEFAULT_CAR_BRANDS_OPTION } from 'utils/constants';
+import { normalizeRentalPrice } from 'utils/normalizeRentalPrice';
+import { SecondaryButton } from 'components/SecondaryButton/SecondaryButton';
 
 export const Filter = ({
   activeBrandFilter,
   activePriceFilter,
   setActiveBrandFilter,
   setActivePriceFilter,
+  setFilteredCars,
+  setAllCars,
+  resetFiltersSearch,
 }) => {
   const [allPrices, setAllPrices] = useState([]);
 
@@ -32,9 +37,33 @@ export const Filter = ({
     })();
   }, []);
 
+  const handleSearchFilter = async () => {
+    console.log('activeBrandFilter', activeBrandFilter);
+    console.log('activePriceFilter', activePriceFilter);
+
+    const cars = await getAllCars();
+
+    const carsToShow = cars.filter(car => {
+      if (!activePriceFilter) {
+        return car.make.toLowerCase() === activeBrandFilter.toLowerCase();
+      }
+
+      if (!activeBrandFilter) {
+        return normalizeRentalPrice(car.rentalPrice) <= activePriceFilter;
+      }
+
+      return (
+        car.make.toLowerCase() === activeBrandFilter.toLowerCase() &&
+        normalizeRentalPrice(car.rentalPrice) <= activePriceFilter
+      );
+    });
+
+    setAllCars([]);
+    setFilteredCars(carsToShow);
+  };
+
   return (
     <FilterContainer>
-      {/* <span>Car brand</span> */}
       <CustomSelect
         options={carBrands}
         name="car-brands"
@@ -53,9 +82,11 @@ export const Filter = ({
       <MainButton
         text="Search"
         type="submit"
-        disabled
+        disabled={!activeBrandFilter && !activePriceFilter}
         btnStyles={{ height: '48px', width: '136px' }}
+        onClick={handleSearchFilter}
       />
+      <SecondaryButton text="Reset filters" onClick={resetFiltersSearch} />
     </FilterContainer>
   );
 };

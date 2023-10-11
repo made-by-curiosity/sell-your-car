@@ -2,8 +2,8 @@ import { Container } from 'components/Container/Container';
 import { PhotoSection } from 'components/PhotoSection/PhotoSection';
 import { MainPageSection } from 'components/MainPageSection/MainPageSection';
 import { PhotoBg } from 'components/PhotoBg/PhotoBg';
-import { RentLinkBtn } from 'components/RentLinkBtn/RentLinkBtn';
 import { Hero } from 'components/Hero/Hero';
+import { DiscountContent } from 'components/DiscountContent/DiscountContent';
 
 const Home = () => {
   return (
@@ -41,10 +41,7 @@ const Home = () => {
       <PhotoBg type="discount">
         <PhotoSection>
           <Container>
-            <p>DRIVEN BY LUXURY</p>
-            <p>GET 80% OFF ALL CARS</p>
-            <p>Enjoy seasonal discounts for a limited time only.</p>
-            <RentLinkBtn />
+            <DiscountContent />
           </Container>
         </PhotoSection>
       </PhotoBg>

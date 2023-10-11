@@ -12,6 +12,8 @@ export const Backdrop = styled.div`
   justify-content: center;
 
   background-color: rgba(18, 20, 23, 0.5);
+
+  z-index: 1000;
 `;
 
 export const ContentWrapper = styled.div`

@@ -1,16 +1,16 @@
 import styled from '@emotion/styled';
 
 export const CarContainer = styled.div`
-  width: 250px;
+  max-width: 250px;
   height: 100%;
 
   display: flex;
   flex-direction: column;
 
-  overflow: auto;
+  overflow-y: auto;
 
   @media screen and (min-width: 768px) {
-    width: 461px;
+    max-width: 461px;
   }
 `;
 

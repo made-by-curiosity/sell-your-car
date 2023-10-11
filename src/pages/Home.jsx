@@ -4,6 +4,7 @@ import { MainPageSection } from 'components/MainPageSection/MainPageSection';
 import { PhotoBg } from 'components/PhotoBg/PhotoBg';
 import { Hero } from 'components/Hero/Hero';
 import { DiscountContent } from 'components/DiscountContent/DiscountContent';
+import { OfferContent } from 'components/OfferContent/OfferContent';
 
 const Home = () => {
   return (
@@ -17,25 +18,7 @@ const Home = () => {
       </PhotoBg>
       <MainPageSection>
         <Container>
-          <h2>Drive Superior</h2>
-          <p>
-            We offer a hassle free car rental service. Book your car online and
-            we deliver it to your doorstep.
-          </p>
-          <ul>
-            <li>
-              <p>FREE DELIVERY</p>
-              <p>We deliver the car to any city in Ukraine, free of charge.</p>
-            </li>
-            <li>
-              <p>ONLINE BOOKING</p>
-              <p>You can book directly online or via whatsapp</p>
-            </li>
-            <li>
-              <p>HUGE FLEET</p>
-              <p>We have more than 100+ cars to choose from</p>
-            </li>
-          </ul>
+          <OfferContent />
         </Container>
       </MainPageSection>
       <PhotoBg type="discount">

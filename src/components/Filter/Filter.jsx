@@ -97,16 +97,16 @@ export const Filter = ({ setFilteredCars }) => {
       </FilterItemWrapper>
       <FilterItemWrapper>
         <FilterLabel>Price/ 1 hour</FilterLabel>
-        <div>
-          <CustomSelect
-            options={allPrices}
-            name="price"
-            defaultText={''}
-            activeOption={activePriceFilter}
-            setActiveOption={setActivePriceFilter}
-            width={125}
-          />
-        </div>
+        <CustomSelect
+          options={allPrices}
+          name="price"
+          defaultText={''}
+          activeOption={activePriceFilter}
+          setActiveOption={setActivePriceFilter}
+          width={125}
+          contentStyles={{ paddingLeft: '43px' }}
+          label="To"
+        />
       </FilterItemWrapper>
       <FilterItemWrapper>
         <FilterLabel>Сar mileage / km</FilterLabel>

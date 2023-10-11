@@ -5,6 +5,7 @@ import {
   OptionsContainer,
   OptionsOverflowWrapper,
   OriginalRadioInput,
+  PriceLabel,
   SelectContainer,
   SelectOptionsWrapper,
   SelectedItem,
@@ -26,6 +27,8 @@ export const CustomSelect = ({
   activeOption,
   setActiveOption,
   width,
+  contentStyles = {},
+  label,
 }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -84,12 +87,14 @@ export const CustomSelect = ({
   return (
     <SelectContainer width={width}>
       <SelectedItemWrapper onMouseDown={handleSelectClick}>
+        {label && <PriceLabel>{label}</PriceLabel>}
         <SelectedItem
           type="text"
           value={!!activeOption ? activeOption : defaultText}
           readOnly
           ref={selectedContainer}
           onKeyDown={handleSelectClick}
+          contentStyles={contentStyles}
         />
         <Icon isActive={isActive}>
           <use href={`${icon}#chevron`} />

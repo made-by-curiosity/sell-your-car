@@ -27,6 +27,8 @@ export const SelectedItem = styled.input`
   background: #f7f7fb;
 
   cursor: pointer;
+
+  ${props => props.contentStyles}
 `;
 
 export const SelectOptionsWrapper = styled.div`
@@ -123,4 +125,19 @@ export const Icon = styled.svg`
 
 export const SelectedItemWrapper = styled.div`
   position: relative;
+`;
+
+export const PriceLabel = styled.span`
+  position: absolute;
+  top: 15px;
+  left: 18px;
+
+  z-index: 115;
+
+  color: #121417;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+
+  cursor: pointer;
 `;

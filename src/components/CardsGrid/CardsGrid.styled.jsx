@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Grid = styled.ul`
-  width: 351px;
+  width: 100%;
   margin-bottom: 50px;
 
   display: flex;

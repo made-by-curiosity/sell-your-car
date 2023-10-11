@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const CardContainer = styled.div`
-  width: 351px;
+  width: 341px;
   height: 100%;
 
   display: flex;

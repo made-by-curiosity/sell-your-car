@@ -1,13 +1,17 @@
 import styled from '@emotion/styled';
 
 export const CarContainer = styled.div`
-  width: 461px;
+  width: 250px;
   height: 100%;
 
   display: flex;
   flex-direction: column;
 
   overflow: auto;
+
+  @media screen and (min-width: 768px) {
+    width: 461px;
+  }
 `;
 
 export const PhotoContainer = styled.div`
@@ -93,11 +97,8 @@ export const AdditionalInfoContainer = styled.div`
 export const AdditionalInfoWrapper = styled.p`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
-
-  & > span {
-    white-space: nowrap;
-  }
 
   & > span:last-child {
     overflow: hidden;
@@ -138,6 +139,7 @@ export const ConditionsContainer = styled.div`
 export const Condition = styled.span`
   padding: 7px 14px;
 
+  display: inline-block;
   font-family: Montserrat;
   line-height: 18px;
   letter-spacing: -0.24px;

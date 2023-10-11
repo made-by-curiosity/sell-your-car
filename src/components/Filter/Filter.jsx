@@ -13,6 +13,7 @@ import { normalizeRentalPrice } from 'utils/normalizeRentalPrice';
 import { SecondaryButton } from 'components/SecondaryButton/SecondaryButton';
 import { FromInput } from 'components/FromInput/FromInput';
 import { ToInput } from 'components/ToInput/ToInput';
+import { normalizeMilage } from 'utils/normalizeMilage';
 
 export const Filter = ({ setFilteredCars }) => {
   const [allPrices, setAllPrices] = useState([]);
@@ -38,10 +39,20 @@ export const Filter = ({ setFilteredCars }) => {
   const handleSearchFilter = async () => {
     console.log('activeBrandFilter', activeBrandFilter);
     console.log('activePriceFilter', activePriceFilter);
+    console.log('mileageFrom', normalizeMilage(mileageFrom));
+    console.log('mileageTo', normalizeMilage(mileageTo));
 
     const cars = await getAllCars();
 
     const carsToShow = cars.filter(car => {
+      // if (!mileageFrom) {
+      // 	return
+      // }
+
+      // if (!mileageTo) {
+      //   return;
+      // }
+
       if (!activePriceFilter) {
         return car.make.toLowerCase() === activeBrandFilter.toLowerCase();
       }
@@ -62,8 +73,13 @@ export const Filter = ({ setFilteredCars }) => {
   const resetFiltersSearch = () => {
     setActiveBrandFilter('');
     setActivePriceFilter('');
+    setMileageFrom('');
+    setMileageTo('');
     setFilteredCars(null);
   };
+
+  const hasSearchFilters =
+    activeBrandFilter || activePriceFilter || mileageFrom || mileageTo;
 
   return (
     <FilterContainer>
@@ -89,7 +105,7 @@ export const Filter = ({ setFilteredCars }) => {
       <MainButton
         text="Search"
         type="submit"
-        disabled={!activeBrandFilter && !activePriceFilter}
+        disabled={!hasSearchFilters}
         btnStyles={{ height: '48px', width: '136px' }}
         onClick={handleSearchFilter}
       />

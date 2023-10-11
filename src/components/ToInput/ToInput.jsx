@@ -5,6 +5,7 @@ import {
 import { Input } from './ToInput.styled';
 import { useRef } from 'react';
 import { numbersCharCodes } from 'utils/constants';
+import { normalizeMilage } from 'utils/normalizeMilage';
 
 export const ToInput = ({ mileageTo, setMileageTo }) => {
   const inputRef = useRef();
@@ -14,19 +15,20 @@ export const ToInput = ({ mileageTo, setMileageTo }) => {
   };
 
   const handleChange = e => {
-    const target = e.target;
-    if (!target.value) {
-      setMileageTo(target.value);
+    const value = e.target.value;
+    if (!value) {
+      setMileageTo(value);
       return;
     }
 
-    const valueLastIndex = target.value.length - 1;
-    const lastCharacter = target.value[valueLastIndex];
+    const valueLastIndex = value.length - 1;
+    const lastCharacter = value[valueLastIndex];
     const isNumber = numbersCharCodes.includes(lastCharacter.charCodeAt());
 
     if (isNumber) {
-      const numberValue = Number(target.value.replaceAll(',', ''));
+      const numberValue = normalizeMilage(value);
       const transformedMileage = numberValue.toLocaleString('en-US');
+
       setMileageTo(transformedMileage);
     }
   };
@@ -39,6 +41,7 @@ export const ToInput = ({ mileageTo, setMileageTo }) => {
         ref={inputRef}
         onChange={handleChange}
         value={mileageTo}
+        name="to"
       />
     </MileageInputWrapper>
   );

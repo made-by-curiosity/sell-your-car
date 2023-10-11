@@ -26,17 +26,33 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  width: 380px;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 345px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 380px;
+  }
 `;
 
 export const ItemContainer = styled.div`
   width: 100%;
-  padding: 10px 50px;
+  padding: 10px 0;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+
+  @media screen and (min-width: 768px) {
+    padding: 10px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 10px 50px;
+  }
 `;
 
 export const ItemTitle = styled.p`

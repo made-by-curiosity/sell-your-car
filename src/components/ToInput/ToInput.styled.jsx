@@ -17,9 +17,5 @@ export const Input = styled.input`
   border: none;
   border-radius: 0px 14px 14px 0px;
 
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+  cursor: pointer;
 `;

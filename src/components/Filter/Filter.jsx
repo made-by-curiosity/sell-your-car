@@ -3,7 +3,13 @@ import { useEffect, useState } from 'react';
 import { MainButton } from 'components/MainButton/MainButton';
 import { CustomSelect } from 'components/CustomSelect/CustomSelect';
 
-import { FilterContainer, MileageWrapper } from './Filter.styled';
+import {
+  ButtonsWrapper,
+  FilterContainer,
+  FilterItemWrapper,
+  FilterLabel,
+  MileageWrapper,
+} from './Filter.styled';
 
 import { getAllCars } from 'services/sellCarsApi';
 import { carBrands } from 'utils/carBrands';
@@ -79,33 +85,47 @@ export const Filter = ({ setFilteredCars }) => {
 
   return (
     <FilterContainer>
-      <CustomSelect
-        options={carBrands}
-        name="car-brands"
-        defaultText={DEFAULT_CAR_BRANDS_OPTION}
-        activeOption={activeBrandFilter}
-        setActiveOption={setActiveBrandFilter}
-      />
-      <CustomSelect
-        options={allPrices}
-        name="price"
-        defaultText={''}
-        activeOption={activePriceFilter}
-        setActiveOption={setActivePriceFilter}
-        width={125}
-      />
-      <MileageWrapper>
-        <FromInput mileageFrom={mileageFrom} setMileageFrom={setMileageFrom} />
-        <ToInput mileageTo={mileageTo} setMileageTo={setMileageTo} />
-      </MileageWrapper>
-      <MainButton
-        text="Search"
-        type="submit"
-        disabled={!hasSearchFilters}
-        btnStyles={{ height: '48px', width: '136px' }}
-        onClick={handleSearchFilter}
-      />
-      <SecondaryButton text="Reset filters" onClick={resetFiltersSearch} />
+      <FilterItemWrapper>
+        <FilterLabel>Car brand</FilterLabel>
+        <CustomSelect
+          options={carBrands}
+          name="car-brands"
+          defaultText={DEFAULT_CAR_BRANDS_OPTION}
+          activeOption={activeBrandFilter}
+          setActiveOption={setActiveBrandFilter}
+        />
+      </FilterItemWrapper>
+      <FilterItemWrapper>
+        <FilterLabel>Price/ 1 hour</FilterLabel>
+        <CustomSelect
+          options={allPrices}
+          name="price"
+          defaultText={''}
+          activeOption={activePriceFilter}
+          setActiveOption={setActivePriceFilter}
+          width={125}
+        />
+      </FilterItemWrapper>
+      <FilterItemWrapper>
+        <FilterLabel>Сar mileage / km</FilterLabel>
+        <MileageWrapper>
+          <FromInput
+            mileageFrom={mileageFrom}
+            setMileageFrom={setMileageFrom}
+          />
+          <ToInput mileageTo={mileageTo} setMileageTo={setMileageTo} />
+        </MileageWrapper>
+      </FilterItemWrapper>
+      <ButtonsWrapper>
+        <MainButton
+          text="Search"
+          type="submit"
+          disabled={!hasSearchFilters}
+          btnStyles={{ height: '48px', width: '136px' }}
+          onClick={handleSearchFilter}
+        />
+        <SecondaryButton text="Reset filters" onClick={resetFiltersSearch} />
+      </ButtonsWrapper>
     </FilterContainer>
   );
 };

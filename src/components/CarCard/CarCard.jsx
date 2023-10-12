@@ -15,7 +15,7 @@ import {
 import { MainButton } from 'components/MainButton/MainButton';
 import { IconBtn } from 'components/IconBtn/IconBtn';
 
-import icon from 'assets/icons/normal.svg';
+import icon from 'assets/icons/svg-sprite.svg';
 import { handlePhotoLoadError } from 'utils/handlePhotoLoadError';
 import default_img from 'assets/img/no_image_available.jpeg';
 
@@ -65,7 +65,7 @@ export const CarCard = ({
       </PhotoWrapper>
 
       <IconBtn
-        icon={`${icon}#heart`}
+        icon={`${icon}#icon-heart`}
         onClick={handleClick}
         favorite={favoriteCars.includes(id)}
       />

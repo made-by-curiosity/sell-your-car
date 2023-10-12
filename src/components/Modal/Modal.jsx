@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+
 import {
   Backdrop,
   CloseBtnIcon,
@@ -6,8 +8,8 @@ import {
   ModalContainer,
   ContentWrapper,
 } from './Modal.styled';
-import icon from 'assets/icons/x.svg';
-import { useEffect } from 'react';
+
+import icon from 'assets/icons/svg-sprite.svg';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -39,7 +41,7 @@ export const Modal = ({ children, toggleModal }) => {
 
         <CloseBtn type="button" onClick={toggleModal}>
           <CloseBtnIcon>
-            <use href={icon + '#close'} />
+            <use href={icon + '#icon-close'} />
           </CloseBtnIcon>
         </CloseBtn>
       </ModalContainer>

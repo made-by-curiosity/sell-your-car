@@ -17,7 +17,7 @@ import {
   KEY_CODES_FOR_SELECT_OPEN,
 } from 'utils/constants';
 
-import icon from 'assets/icons/chevron-down.svg';
+import icon from 'assets/icons/svg-sprite.svg';
 import { scrollOnFocus } from 'utils/scrollOnFocus';
 
 export const CustomSelect = ({
@@ -100,7 +100,7 @@ export const CustomSelect = ({
           contentStyles={contentStyles}
         />
         <Icon isActive={isActive}>
-          <use href={`${icon}#chevron`} />
+          <use href={`${icon}#icon-down-arrow`} />
         </Icon>
       </SelectedItemWrapper>
       {isActive && (

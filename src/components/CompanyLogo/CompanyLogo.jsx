@@ -1,11 +1,12 @@
-import logo from '../../assets/icons/car-svgrepo-com.svg';
+import icon from 'assets/icons/svg-sprite.svg';
+
 import { LogoSvg, LogoWrapper } from './CompanyLogo.styled';
 
 export const CompanyLogo = () => {
   return (
     <LogoWrapper>
       <LogoSvg>
-        <use href={`${logo}#Capa_1`} />
+        <use href={`${icon}#icon-logo`} />
       </LogoSvg>
     </LogoWrapper>
   );

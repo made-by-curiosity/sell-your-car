@@ -11,14 +11,15 @@ import {
   SelectedItem,
   SelectedItemWrapper,
 } from './CustomSelect.styled';
+
 import {
   DEFAULT_ACTIVE_OPTION,
   KEY_CODES_FOR_OPTION_SELECT,
   KEY_CODES_FOR_SELECT_OPEN,
 } from 'utils/constants';
+import { scrollOnFocus } from 'utils/scrollOnFocus';
 
 import icon from 'assets/icons/svg-sprite.svg';
-import { scrollOnFocus } from 'utils/scrollOnFocus';
 
 export const CustomSelect = ({
   options = [],

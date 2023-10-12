@@ -1,4 +1,3 @@
-import { handlePhotoLoadError } from 'utils/handlePhotoLoadError';
 import {
   ButtonWrapper,
   CarRadioLabel,
@@ -6,12 +5,14 @@ import {
   OriginalHiddenRadio,
 } from './FavoriteCarBtn.styled';
 
+import { handlePhotoLoadError } from 'utils/handlePhotoLoadError';
+
 import default_img from 'assets/img/no_image_available.jpeg';
 
 export const FavoriteCarBtn = ({ carInfo, activeCar, setActiveCar }) => {
   const { year, make, model, img = default_img, id } = carInfo;
 
-  const handleChange = e => {
+  const handleChange = () => {
     setActiveCar(carInfo);
   };
 

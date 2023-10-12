@@ -9,6 +9,7 @@ import { CarInfoModal } from 'components/CarInfoModal/CarInfoModal';
 import { Filter } from 'components/Filter/Filter';
 
 import { getAllCarsPerPage } from 'services/sellCarsApi';
+
 import { PAGE, PER_PAGE } from 'utils/constants';
 import { smoothScrollOnLoadMore } from 'utils/scrollOnLoadMore';
 

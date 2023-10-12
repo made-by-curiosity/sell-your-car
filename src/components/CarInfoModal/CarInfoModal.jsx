@@ -1,5 +1,3 @@
-import { Modal } from 'components/Modal/Modal';
-import { MainLinkButton } from 'components/MainLinkButton/MainLinkButton';
 import {
   AdditionalInfoContainer,
   AdditionalInfoWrapper,
@@ -18,6 +16,8 @@ import {
   PhotoContainer,
   PhotoWrapper,
 } from './CarInfoModal.styled';
+import { Modal } from 'components/Modal/Modal';
+import { MainLinkButton } from 'components/MainLinkButton/MainLinkButton';
 
 import { handlePhotoLoadError } from 'utils/handlePhotoLoadError';
 import default_img from 'assets/img/no_image_available.jpeg';

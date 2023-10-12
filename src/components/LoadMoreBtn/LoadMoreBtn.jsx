@@ -1,5 +1,7 @@
 import { MagnifyingGlass } from 'react-loader-spinner';
+
 import { ButtonWrapper } from './LoadMoreBtn.styled';
+
 import { SecondaryButton } from 'components/SecondaryButton/SecondaryButton';
 
 export const LoadMoreBtn = ({ text, disabled, onClick, isLoadingMoreCars }) => {

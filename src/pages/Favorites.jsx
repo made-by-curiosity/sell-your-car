@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react';
+import { useFavorite } from 'hooks/favoriteContext';
+
 import { Container } from 'components/Container/Container';
 import { FavoriteCarBtn } from 'components/FavoriteCarBtn/FavoriteCarBtn';
 import { FavoriteCarView } from 'components/FavoriteCarView/FavoriteCarView';
@@ -6,8 +9,7 @@ import { FavoritesList } from 'components/FavoritesSidebar/FavoritesSidebar.styl
 import { NoFavoriteMessage } from 'components/NoFavoriteMessage/NoFavoriteMessage';
 import { Section } from 'components/Section/Section';
 import { SectionWrapper } from 'components/SectionWrapper/SectionWrapper';
-import { useFavorite } from 'hooks/favoriteContext';
-import { useEffect, useState } from 'react';
+
 import { getAllCars } from 'services/sellCarsApi';
 
 const Favorites = () => {

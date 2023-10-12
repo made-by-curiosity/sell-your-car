@@ -1,5 +1,5 @@
-import { Navigation } from 'components/Navigation/Navigation';
 import { HeaderWrapper, LinkLogo, LogoText, PageHeader } from './AppBar.styled';
+import { Navigation } from 'components/Navigation/Navigation';
 import { Container } from 'components/Container/Container';
 import { CompanyLogo } from 'components/CompanyLogo/CompanyLogo';
 

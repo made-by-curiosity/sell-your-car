@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { MainButton } from 'components/MainButton/MainButton';
-import { CustomSelect } from 'components/CustomSelect/CustomSelect';
-
 import {
   ButtonsWrapper,
   FilterContainer,
@@ -11,15 +8,19 @@ import {
   MileageWrapper,
 } from './Filter.styled';
 
-import { getAllCars } from 'services/sellCarsApi';
-import { carBrands } from 'utils/carBrands';
-import { getPricesByStep } from 'utils/getPricesByStep';
-import { DEFAULT_CAR_BRANDS_OPTION } from 'utils/constants';
-import { normalizeRentalPrice } from 'utils/normalizeRentalPrice';
+import { MainButton } from 'components/MainButton/MainButton';
+import { CustomSelect } from 'components/CustomSelect/CustomSelect';
 import { SecondaryButton } from 'components/SecondaryButton/SecondaryButton';
 import { FromInput } from 'components/FromInput/FromInput';
 import { ToInput } from 'components/ToInput/ToInput';
+
+import { getAllCars } from 'services/sellCarsApi';
+
+import { getPricesByStep } from 'utils/getPricesByStep';
+import { normalizeRentalPrice } from 'utils/normalizeRentalPrice';
 import { normalizeMilage } from 'utils/normalizeMilage';
+import { carBrands } from 'utils/carBrands';
+import { DEFAULT_CAR_BRANDS_OPTION } from 'utils/constants';
 
 export const Filter = ({ setFilteredCars }) => {
   const [allPrices, setAllPrices] = useState([]);

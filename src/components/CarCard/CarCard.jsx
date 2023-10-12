@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { useFavorite } from 'hooks/favoriteContext';
-import { filterFeatures } from 'utils/carFeaturesSorting';
 import {
   AdditionalInfoContainer,
   AdditionalInfoWrapper,
@@ -15,8 +14,10 @@ import {
 import { MainButton } from 'components/MainButton/MainButton';
 import { IconBtn } from 'components/IconBtn/IconBtn';
 
-import icon from 'assets/icons/svg-sprite.svg';
+import { filterFeatures } from 'utils/carFeaturesSorting';
 import { handlePhotoLoadError } from 'utils/handlePhotoLoadError';
+
+import icon from 'assets/icons/svg-sprite.svg';
 import default_img from 'assets/img/no_image_available.jpeg';
 
 export const CarCard = ({

@@ -1,9 +1,11 @@
+import { useRef } from 'react';
+
 import {
   MileageInputLabel,
   MileageInputWrapper,
 } from 'components/Filter/Filter.styled';
 import { Input } from './ToInput.styled';
-import { useRef } from 'react';
+
 import { numbersCharCodes } from 'utils/constants';
 import { normalizeMilage } from 'utils/normalizeMilage';
 

@@ -1,5 +1,6 @@
-import { NavLinkItem } from 'components/NavLinkItem/NavLinkItem';
 import { AppNav } from './Navigation.styled';
+
+import { NavLinkItem } from 'components/NavLinkItem/NavLinkItem';
 
 export const Navigation = () => {
   return (

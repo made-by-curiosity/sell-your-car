@@ -1,4 +1,3 @@
-import { RentLinkBtn } from 'components/RentLinkBtn/RentLinkBtn';
 import {
   ContentWrapper,
   PostTitle,
@@ -6,6 +5,7 @@ import {
   SectionTitle,
   TextHighlighter,
 } from './DiscountContent.styled';
+import { RentLinkBtn } from 'components/RentLinkBtn/RentLinkBtn';
 
 export const DiscountContent = () => {
   return (

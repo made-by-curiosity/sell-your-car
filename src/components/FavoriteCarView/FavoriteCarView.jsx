@@ -1,4 +1,3 @@
-import { handlePhotoLoadError } from 'utils/handlePhotoLoadError';
 import {
   AdditionalInfoContainer,
   AdditionalInfoWrapper,
@@ -20,9 +19,11 @@ import {
   ViewWrapper,
 } from './FavoriteCarView.styled';
 import { MainLinkButton } from 'components/MainLinkButton/MainLinkButton';
+import { SecondaryButton } from 'components/SecondaryButton/SecondaryButton';
+
+import { handlePhotoLoadError } from 'utils/handlePhotoLoadError';
 
 import default_img from 'assets/img/no_image_available.jpeg';
-import { SecondaryButton } from 'components/SecondaryButton/SecondaryButton';
 
 export const FavoriteCarView = ({ carInfo, toggleFavorite }) => {
   const {

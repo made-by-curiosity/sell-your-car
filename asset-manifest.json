@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/sell-your-car/static/css/main.409d75d8.css",
-    "main.js": "/sell-your-car/static/js/main.80208f9e.js",
-    "static/js/329.79879c03.chunk.js": "/sell-your-car/static/js/329.79879c03.chunk.js",
-    "static/js/416.1c08fc31.chunk.js": "/sell-your-car/static/js/416.1c08fc31.chunk.js",
-    "static/js/522.74e3faeb.chunk.js": "/sell-your-car/static/js/522.74e3faeb.chunk.js",
+    "main.js": "/sell-your-car/static/js/main.4876d78d.js",
+    "static/js/329.11a96d10.chunk.js": "/sell-your-car/static/js/329.11a96d10.chunk.js",
+    "static/js/416.b9da4ab0.chunk.js": "/sell-your-car/static/js/416.b9da4ab0.chunk.js",
+    "static/js/522.b6f6be25.chunk.js": "/sell-your-car/static/js/522.b6f6be25.chunk.js",
     "static/js/279.3c8efb91.chunk.js": "/sell-your-car/static/js/279.3c8efb91.chunk.js",
     "static/js/727.c434dcd9.chunk.js": "/sell-your-car/static/js/727.c434dcd9.chunk.js",
     "static/media/bg_car_8.jpg": "/sell-your-car/static/media/bg_car_8.217b5da411487387a001.jpg",
@@ -22,15 +22,15 @@
     "static/media/svg-sprite.svg": "/sell-your-car/static/media/svg-sprite.e6ce57e72c70cfdb8094eba269132110.svg",
     "index.html": "/sell-your-car/index.html",
     "main.409d75d8.css.map": "/sell-your-car/static/css/main.409d75d8.css.map",
-    "main.80208f9e.js.map": "/sell-your-car/static/js/main.80208f9e.js.map",
-    "329.79879c03.chunk.js.map": "/sell-your-car/static/js/329.79879c03.chunk.js.map",
-    "416.1c08fc31.chunk.js.map": "/sell-your-car/static/js/416.1c08fc31.chunk.js.map",
-    "522.74e3faeb.chunk.js.map": "/sell-your-car/static/js/522.74e3faeb.chunk.js.map",
+    "main.4876d78d.js.map": "/sell-your-car/static/js/main.4876d78d.js.map",
+    "329.11a96d10.chunk.js.map": "/sell-your-car/static/js/329.11a96d10.chunk.js.map",
+    "416.b9da4ab0.chunk.js.map": "/sell-your-car/static/js/416.b9da4ab0.chunk.js.map",
+    "522.b6f6be25.chunk.js.map": "/sell-your-car/static/js/522.b6f6be25.chunk.js.map",
     "279.3c8efb91.chunk.js.map": "/sell-your-car/static/js/279.3c8efb91.chunk.js.map",
     "727.c434dcd9.chunk.js.map": "/sell-your-car/static/js/727.c434dcd9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.409d75d8.css",
-    "static/js/main.80208f9e.js"
+    "static/js/main.4876d78d.js"
   ]
 }

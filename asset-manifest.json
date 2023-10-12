@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/sell-your-car/static/css/main.409d75d8.css",
-    "main.js": "/sell-your-car/static/js/main.6fdea0b4.js",
+    "main.js": "/sell-your-car/static/js/main.80208f9e.js",
     "static/js/329.79879c03.chunk.js": "/sell-your-car/static/js/329.79879c03.chunk.js",
-    "static/js/805.7f127466.chunk.js": "/sell-your-car/static/js/805.7f127466.chunk.js",
+    "static/js/416.1c08fc31.chunk.js": "/sell-your-car/static/js/416.1c08fc31.chunk.js",
     "static/js/522.74e3faeb.chunk.js": "/sell-your-car/static/js/522.74e3faeb.chunk.js",
     "static/js/279.3c8efb91.chunk.js": "/sell-your-car/static/js/279.3c8efb91.chunk.js",
     "static/js/727.c434dcd9.chunk.js": "/sell-your-car/static/js/727.c434dcd9.chunk.js",
@@ -19,21 +19,18 @@
     "static/media/Manrope-Medium.ttf": "/sell-your-car/static/media/Manrope-Medium.08894ccb04665d1a9d53.ttf",
     "static/media/Manrope-Regular.ttf": "/sell-your-car/static/media/Manrope-Regular.a9b9e09fe6b69741f316.ttf",
     "static/media/no_image_available.jpeg": "/sell-your-car/static/media/no_image_available.2b032a720f23bb77b6c2.jpeg",
-    "static/media/car-svgrepo-com.svg": "/sell-your-car/static/media/car-svgrepo-com.a0eca8eae5e0a41bdac0c4de5041a4b3.svg",
+    "static/media/svg-sprite.svg": "/sell-your-car/static/media/svg-sprite.e6ce57e72c70cfdb8094eba269132110.svg",
     "index.html": "/sell-your-car/index.html",
-    "static/media/normal.svg": "/sell-your-car/static/media/normal.7d6d70062cbaa5f87a31751fece743c7.svg",
-    "static/media/x.svg": "/sell-your-car/static/media/x.179edadd79e29bae48de61492fdb52f3.svg",
-    "static/media/chevron-down.svg": "/sell-your-car/static/media/chevron-down.2793abea629ddd781e7e1a62ceaccb62.svg",
     "main.409d75d8.css.map": "/sell-your-car/static/css/main.409d75d8.css.map",
-    "main.6fdea0b4.js.map": "/sell-your-car/static/js/main.6fdea0b4.js.map",
+    "main.80208f9e.js.map": "/sell-your-car/static/js/main.80208f9e.js.map",
     "329.79879c03.chunk.js.map": "/sell-your-car/static/js/329.79879c03.chunk.js.map",
-    "805.7f127466.chunk.js.map": "/sell-your-car/static/js/805.7f127466.chunk.js.map",
+    "416.1c08fc31.chunk.js.map": "/sell-your-car/static/js/416.1c08fc31.chunk.js.map",
     "522.74e3faeb.chunk.js.map": "/sell-your-car/static/js/522.74e3faeb.chunk.js.map",
     "279.3c8efb91.chunk.js.map": "/sell-your-car/static/js/279.3c8efb91.chunk.js.map",
     "727.c434dcd9.chunk.js.map": "/sell-your-car/static/js/727.c434dcd9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.409d75d8.css",
-    "static/js/main.6fdea0b4.js"
+    "static/js/main.80208f9e.js"
   ]
 }
